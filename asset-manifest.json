@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Vocab/static/css/main.9e6e9a22.css",
+    "main.js": "/Vocab/static/js/main.5bc263fd.js",
+    "static/js/453.ed3810f9.chunk.js": "/Vocab/static/js/453.ed3810f9.chunk.js",
+    "static/media/logo.svg": "/Vocab/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Vocab/index.html",
+    "main.9e6e9a22.css.map": "/Vocab/static/css/main.9e6e9a22.css.map",
+    "main.5bc263fd.js.map": "/Vocab/static/js/main.5bc263fd.js.map",
+    "453.ed3810f9.chunk.js.map": "/Vocab/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e6e9a22.css",
+    "static/js/main.5bc263fd.js"
+  ]
+}
