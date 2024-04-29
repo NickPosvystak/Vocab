@@ -1,9 +1,13 @@
-
-.menu-container{
+.menu-container {
+  height: 100%;
   padding: 16px;
   background-color: var(--primaryColor);
+
 }
-.user-menu{
+.icon-close {
+  margin-left: auto;
+}
+.user-menu {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -13,9 +17,9 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  height: 100vh;
+  height: 184px;
 }
-.nav-title{
+.nav-title {
   font-weight: 500;
   font-size: 14px;
   color: rgb(18, 20, 23);
@@ -23,5 +27,16 @@
   width: 110px;
   border-radius: 15px;
   background-color: rgb(252, 252, 252);
+}
 
+.Illustration {
+  margin-top: auto;
+  text-align: center;
+  
+}
+.img-Illustration{
+  max-width: 200%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
 }
