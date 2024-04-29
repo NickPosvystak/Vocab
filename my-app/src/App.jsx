@@ -1,36 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
-import Navigation from './components/navigation';
-import { lazy } from 'react';
+import "./App.css";
+import { Suspense, lazy } from "react";
+import Home from "./pages/Home/Home";
+import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navigation from "./components/Navigation/navigation";
 
+const RegisterPage = lazy(() => import("./pages/RegisterPage/Register"));
+const LoginPage = lazy(() => import("./pages/LoginPage/Login"));
 
-const RegisterPage = lazy(() => import("pages/register.jsx"));
-const LoginPage = lazy(() => import("pages/login.jsx"));
-const HomePage = lazy(() => import("pages/home.jsx"));
-
+const appRoutes = [
+  {
+    path: "/register",
+    element: <RegisterPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/",
+    element: <Home />,
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <Navigation /> */}
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="../public/404.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+
+        <Suspense fallback="Loading....">
+          <Routes>
+            {appRoutes.map(({ path, element }) => (
+              <Route key={path} path={path} element={element} />
+            ))}
+          </Routes>
+        </Suspense>
+      </div>
+    </Router>
   );
 }
 

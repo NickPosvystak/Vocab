@@ -1,0 +1,27 @@
+
+.menu-container{
+  padding: 16px;
+  background-color: var(--primaryColor);
+}
+.user-menu{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 166px;
+}
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100vh;
+}
+.nav-title{
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(18, 20, 23);
+  padding: 12px 20px;
+  width: 110px;
+  border-radius: 15px;
+  background-color: rgb(252, 252, 252);
+
+}

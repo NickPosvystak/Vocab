@@ -5,7 +5,7 @@ export default function Login() {
         <img src="" alt="" />
       </div>
       <div>
-        <h1>Register</h1>
+        <h1>Login</h1>
         <p>
           To start using our services, please fill out the registration form
           below. All fields are mandatory:
