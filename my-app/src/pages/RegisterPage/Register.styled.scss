@@ -1,0 +1,67 @@
+.container {
+}
+.img-register {
+  width: 247px;
+  height: 191px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  height: 100vh;
+  padding-top: 32px;
+  padding-bottom: 57px;
+  border-radius: 25px 25px 0 0;
+  background-color: var(--loginColor);
+  .title {
+    font-weight: 600;
+    font-style: 30px;
+    padding-bottom: 16px;
+  }
+  .description {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+     line-height: 1.5;
+    padding-bottom: 16px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #0056b3;
+}

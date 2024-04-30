@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../../assets/images/Logo_Craftwork.svg";
 import "./navigation.scss";
 import User from "../User/User";
 import Menu from "../Menu/Menu";
+import sprite from "../../assets/svg/symbol-defs.svg";
 
 const Navigation = () => {
   const [state, setState] = useState({
@@ -23,7 +23,10 @@ const Navigation = () => {
   return (
     <header className="header">
       <NavLink to="/" className="logo">
-        <img src={Logo} alt="VocabBuilder" className="log-img" />
+        {/* <img src={Logo} alt="VocabBuilder" className="log-img" /> */}
+        <svg  width="32" height="32">
+          <use href={sprite + "#icon-logo"}></use>
+        </svg>
         <p className="logo-title">VocabBuilder</p>
       </NavLink>
 

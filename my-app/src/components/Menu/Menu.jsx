@@ -6,8 +6,7 @@ import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import "./Menu.styled.scss";
 import User from "../User/User";
-import Close from "../../assets/images/x.svg";
-import Illustration from "../../assets/images/illustration.png"
+import sprite from "../../assets/svg/symbol-defs.svg";
 
 export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
   const list = (anchor) => (
@@ -20,7 +19,9 @@ export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
     >
       <div className="user-menu">
         <User />
-        <img src={Close} alt="icon close" className="icon-close" />
+        <svg className="menu-close" width="32" height="32">
+          <use href={sprite + "#icon-close"}></use>
+        </svg>
       </div>
 
       <div className="nav-menu">
@@ -34,13 +35,13 @@ export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
           Login
         </NavLink>
       </div>
-      <div className="Illustration">
+      {/* <div className="image-box">
         <img
           src={Illustration}
           alt="Illustration"
           className="img-Illustration"
         />
-      </div>
+      </div> */}
     </Box>
   );
 
