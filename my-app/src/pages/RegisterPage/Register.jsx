@@ -2,19 +2,21 @@ import { useForm } from "react-hook-form";
 
 import "./Register.styled.scss";
 import Image from "../../assets/images/illustration.png";
+import { NavLink } from "react-router-dom";
 
 const Register = () => {
-   const {
-     register,
-     handleSubmit,
-     formState: { errors },
-   } = useForm();
-   const onSubmit = (data) => console.log(data);
-   console.log(errors);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
   return (
     <section className="container">
-      <div>
+      <div className="box-image">
         <img src={Image} alt="Illustration" className="img-register" />
+        <p className="support-image">Word · Translation · Grammar · Progress</p>
       </div>
 
       <div className="box">
@@ -43,11 +45,10 @@ const Register = () => {
             />
 
             <input type="submit" value="Register" />
+            <NavLink to="/login" className="btn-login">
+              Login
+            </NavLink>
           </form>
-        </div>
-        <div>
-        
-          <button>Login</button>
         </div>
       </div>
     </section>

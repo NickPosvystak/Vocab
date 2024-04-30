@@ -1,14 +1,62 @@
 .container {
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 140px 54px 0;
+    gap: 98px;
+
+  }
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin: 0;
+  }
 }
-.img-register {
-  width: 247px;
-  height: 191px;
-  margin-left: auto;
-  margin-right: auto;
+.box-image {
+  .img-register {
+    width: 247px;
+    height: 191px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .support-image {
+    display: none;
+  }
+  @media only screen and (min-width: 768px) {
+    .img-register {
+      display: none;
+    }
+    .support-image {
+      display: inline;
+      //   margin-left: auto;
+      //   margin-right: auto;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .img-register {
+        display: inline;
+      width: 498px;
+      height: 475px;
+    }
+    .support-image {
+      display: inline;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 158px;
+    }
+  }
 }
 
 .box {
-  height: 100vh;
+  //   height: 100vh;
   padding-top: 32px;
   padding-bottom: 57px;
   border-radius: 25px 25px 0 0;
@@ -22,8 +70,18 @@
     font-weight: 400;
     font-size: 16px;
     text-align: left;
-     line-height: 1.5;
+    line-height: 1.5;
     padding-bottom: 16px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding: 48px 64px;
+    border-radius: 30px;
+  }
+  @media only screen and (min-width: 1440px) {
+    height: 592px;
+    width: 628px;
+    padding: 48px 64px;
+    border-radius: 30px;
   }
 }
 
@@ -35,33 +93,37 @@ form {
 
 input[type="text"],
 input[type="password"] {
-  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 18px;
   border-radius: 10px;
   border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-  background-color: #007bff;
+  font-weight: 700;
+  font-size: 16px;
+
+  background-color: var(--primaryColor);
   color: #fff;
-  padding: 10px;
+  padding: 16px;
+  margin-top: 32px;
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: var(--onFocus);
 }
 
-button {
-  background-color: transparent;
-  border: none;
-  color: #007bff;
+.btn-login {
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: underline;
-  cursor: pointer;
-}
-
-button:hover {
-  color: #0056b3;
+  color: var(--mainColor);
+  &:hover {
+    color: var(--secondColorFocus);
+  }
 }
