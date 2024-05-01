@@ -12,16 +12,16 @@ const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
 
 const appRoutes = [
   {
+    path: "/",
+    element: <Home />,
+  },
+  {
     path: "/register",
     element: <RegisterPage />,
   },
   {
     path: "/login",
     element: <LoginPage />,
-  },
-  {
-    path: "/",
-    element: <Home />,
   },
   {
     path: "/recommend",

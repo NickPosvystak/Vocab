@@ -1,24 +1,21 @@
-
-.container{
-   @media only screen and (min-width: 768px) {
-       display: flex;
-       gap: 8px;
-     
-   }
-
-}
-.label{
+.container {
+  @media only screen and (min-width: 768px) {
     display: flex;
-    align-items: center;
-justify-content: center;
-margin-bottom: 8px;
-// max-width: 100vw;
+    gap: 8px;
+  }
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  // max-width: 100vw;
 }
 .input-container {
-    min-width: 288px;
+  min-width: 288px;
   position: relative;
   width: 100%;
-//   width: calc(100% - 40px); /* Adjust for the icon's width and margin */
+  //   width: calc(100% - 40px); /* Adjust for the icon's width and margin */
 }
 
 .search-input {
@@ -27,14 +24,21 @@ margin-bottom: 8px;
   color: #121417;
   border-radius: 15px;
   border: 1px solid black;
-  padding: 12px 40px; /* Adjust for the icon's width */
+  padding: 12px 24px; /* Adjust for the icon's width */
   background-color: beige;
   width: 100%; /* Set input field width to 100% of its container */
+}
+.input-category{
+    width: 100%;
+}
+.input-label{
+    border-radius: 15px;
+
 }
 
 .icon {
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjust the right distance to fit the icon inside the input */
+  right: 24px; /* Adjust the right distance to fit the icon inside the input */
   transform: translateY(-50%);
 }
