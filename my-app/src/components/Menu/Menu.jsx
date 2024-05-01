@@ -31,6 +31,12 @@ export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
         <NavLink to="/register" className="nav-title">
           Register
         </NavLink>
+        <NavLink to="/recommend" className="nav-title">
+          Recommend
+        </NavLink>
+        <NavLink to="/training" className="nav-title">
+          Training
+        </NavLink>
         <NavLink to="/login" className="nav-title">
           Login
         </NavLink>

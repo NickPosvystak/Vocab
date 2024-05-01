@@ -7,6 +7,8 @@ import Navigation from "./components/Navigation/navigation";
 
 const RegisterPage = lazy(() => import("./pages/RegisterPage/Register"));
 const LoginPage = lazy(() => import("./pages/LoginPage/Login"));
+const RecommendPage = lazy(() => import("./pages/RecommendPage/Recommend"));
+const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
 
 const appRoutes = [
   {
@@ -21,6 +23,14 @@ const appRoutes = [
     path: "/",
     element: <Home />,
   },
+  {
+    path: "/recommend",
+    element: <RecommendPage />,
+  },
+  {
+    path: "/training",
+    element: <TrainingPage />,
+  }
 ];
 
 function App() {
