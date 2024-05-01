@@ -1,12 +1,16 @@
-
-
-.title{
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 8px;
+  .title {
     font-weight: 500;
     font-style: 16px;
     color: rgb(18, 20, 23);
-}
-.name-img{
+  }
+  .name-img {
     padding: 10px;
     border-radius: 50%;
     border: 1px solid black;
+  }
 }

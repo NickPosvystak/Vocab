@@ -19,5 +19,8 @@
 <path fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.4" stroke="#85aa9f" style="stroke: var(--color1, #85aa9f)" d="M14.656 25.328c-5.888 0-10.656-4.784-10.656-10.672s4.768-10.656 10.656-10.656c5.888 0 10.672 4.768 10.672 10.656s-4.784 10.672-10.672 10.672z"></path>
 <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" stroke="#85aa9f" style="stroke: var(--color1, #85aa9f)" d="M28 28l-5.808-5.808"></path>
 </symbol>
+<symbol id="icon-menu" viewBox="0 0 32 32">
+<path d="M4 24v-2.667h24v2.667h-24zM4 17.333v-2.667h24v2.667h-24zM4 10.667v-2.667h24v2.667h-24z"></path>
+</symbol>
 </defs>
 </svg>

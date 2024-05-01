@@ -30,7 +30,7 @@ const appRoutes = [
   {
     path: "/training",
     element: <TrainingPage />,
-  }
+  },
 ];
 
 function App() {

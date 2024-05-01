@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
 
 import { NavLink } from "react-router-dom";
 import "./Menu.styled.scss";
@@ -52,10 +51,17 @@ export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
   );
 
   return (
-    <div>
+    <div className="menu-mobile-right">
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <svg
+            className="menu-toggle"
+            width="32"
+            height="32"
+            onClick={toggleDrawer(anchor, true)}
+          >
+            <use href={sprite + "#icon-menu"}></use>
+          </svg>
           <Drawer
             anchor={anchor}
             open={state[anchor]}

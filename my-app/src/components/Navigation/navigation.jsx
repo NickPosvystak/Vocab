@@ -22,21 +22,35 @@ const Navigation = () => {
   };
   return (
     <header className="header">
-      <NavLink to="/" className="logo">
+      <div>
+
+        <NavLink to="/" className="logo">
         {/* <img src={Logo} alt="VocabBuilder" className="log-img" /> */}
-        <svg  width="32" height="32">
+        <svg width="32" height="32">
           <use href={sprite + "#icon-logo"}></use>
         </svg>
         <p className="logo-title">VocabBuilder</p>
       </NavLink>
+      </div>
 
-      {/* <div>
-        <NavLink to="/">Dictionary</NavLink>
-        <NavLink to="/register">Register</NavLink>
-        <NavLink to="/login">Login</NavLink>
-      </div> */}
+      <div className="navigation-menu">
+        <NavLink to="/" className="nav-title">
+          Dictionary
+        </NavLink>
+       
+        <NavLink to="/recommend" className="nav-title">
+          Recommend
+        </NavLink>
+        <NavLink to="/training" className="nav-title">
+          Training
+        </NavLink>
+       
+      </div>
+      <div className="bar-menu">
+
       <User />
       <Menu state={state} toggleDrawer={toggleDrawer} />
+      </div>
     </header>
   );
 };
