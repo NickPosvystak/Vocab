@@ -3,9 +3,12 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import SearchIcon from "@mui/icons-material/Search";
 
 import "./Home.styled.scss";
-import sprite from "../../assets/svg/symbol-defs.svg";
+// import sprite from "../../assets/svg/symbol-defs.svg";
 import { useState } from "react";
 
 const Home = () => {
@@ -19,6 +22,49 @@ const Home = () => {
     <section className="container">
       <label className="label">
         <div className="input-container">
+          <Box
+            component="form"
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+                "&:hover fieldset": {
+                  borderColor: "rgba(18, 20, 23, 0.1)",
+                  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                },
+                "&.Mui-focused fieldset": {
+                  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                  borderColor: "rgb(133, 170, 159)", // border color on focus
+                },
+              },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <TextField
+              id="outlined-basic"
+              label="Find the word"
+              variant="outlined"
+              sx={{
+                "& .MuiInputLabel-root": {
+                  fontWeight: "500",
+                  fontSize: "16px",
+                  color: "#121417",
+                },
+                width: "100%",
+              }}
+              InputProps={{
+                endAdornment: (
+                  <SearchIcon
+                    sx={{ color: "action.active", cursor: "pointer" }}
+                  />
+                ),
+              }}
+            />
+          </Box>
+        </div>
+      </label>
+      {/* <label className="label">
+        <div className="input-container">
           <input
             type="search"
             placeholder="Find the word"
@@ -28,7 +74,7 @@ const Home = () => {
             <use href={sprite + "#icon-search"}></use>
           </svg>
         </div>
-      </label>
+      </label> */}
       <label className="label">
         <div className="input-container">
           <FormControl
@@ -36,33 +82,38 @@ const Home = () => {
             sx={{
               borderRadius: "15px",
               fontSize: "16px",
+              "&:hover fieldset": {
+                borderColor: "rgba(18, 20, 23, 0.1)",
+                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+              },
+              "&.Mui-focused fieldset": {
+                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                borderColor: "rgb(133, 170, 159)", // border color on focus
+              },
+              // padding: "12px 24px",
             }}
-            >
+          >
             <InputLabel
               sx={{
-                
                 fontWeight: "500",
                 color: "#121417",
                 fontSize: "16px",
-                
+                borderColor: "red",
               }}
               id="demo-select-small-label"
-              >
+            >
               Category
             </InputLabel>
             <Select
-              className="input-label"
               labelId="demo-select-small-label"
               id="demo-select-small"
               value={category}
               label="Category"
               onChange={handleChange}
-              sx={
-                {
-                  // textAlign: "start",
-                  // padding: "12px 24px 12px 24px",
-                }
-              }
+              sx={{
+                borderRadius: "15px",
+                // textAlign: "start",
+              }}
             >
               <MenuItem className="input-label" value="">
                 <em>None</em>
