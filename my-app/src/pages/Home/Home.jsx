@@ -28,12 +28,15 @@ const Home = () => {
               "& .MuiOutlinedInput-root": {
                 borderRadius: "15px",
                 "&:hover fieldset": {
-                  borderColor: "rgba(18, 20, 23, 0.1)",
+                  borderColor: "rgb(133, 170, 159)",
                   boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                 },
                 "&.Mui-focused fieldset": {
                   boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                   borderColor: "rgb(133, 170, 159)", // border color on focus
+                },
+                "&.MuiInputBase fieldset": {
+                  border: "none",
                 },
               },
             }}
@@ -49,6 +52,9 @@ const Home = () => {
                   fontWeight: "500",
                   fontSize: "16px",
                   color: "#121417",
+                },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "rgb(133, 170, 159)",
                 },
                 width: "100%",
               }}
@@ -82,14 +88,17 @@ const Home = () => {
             sx={{
               borderRadius: "15px",
               fontSize: "16px",
-              "&:hover fieldset": {
-                borderColor: "rgba(18, 20, 23, 0.1)",
-                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+              "& .MuiOutlinedInput-root": {
+                borderColor: "rgb(133, 170, 159)",
+                "&:hover fieldset": {
+                  borderColor: "rgb(133, 170, 159)", // border color on hover
+                  boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "rgb(133, 170, 159)", // border color when focused
+                },
               },
-              "&.Mui-focused fieldset": {
-                boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-                borderColor: "rgb(133, 170, 159)", // border color on focus
-              },
+
               // padding: "12px 24px",
             }}
           >
@@ -98,7 +107,10 @@ const Home = () => {
                 fontWeight: "500",
                 color: "#121417",
                 fontSize: "16px",
-                borderColor: "red",
+                "&.Mui-focused": {
+                  // Note: No need to specify .MuiOutlinedInput-root here
+                  color: "rgb(133, 170, 159)",
+                },
               }}
               id="demo-select-small-label"
             >
@@ -112,15 +124,21 @@ const Home = () => {
               onChange={handleChange}
               sx={{
                 borderRadius: "15px",
-                // textAlign: "start",
               }}
             >
               <MenuItem className="input-label" value="">
                 <em>None</em>
               </MenuItem>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Verb</MenuItem>
+              <MenuItem value={20}>Participle</MenuItem>
+              <MenuItem value={40}>Adjective</MenuItem>
+              <MenuItem value={50}>Pronoun</MenuItem>
+              <MenuItem value={60}>Numerals</MenuItem>
+              <MenuItem value={70}>Adverb</MenuItem>
+              <MenuItem value={80}>Preposition</MenuItem>
+              <MenuItem value={90}>Conjuction</MenuItem>
+              <MenuItem value={95}>Phrasal verb</MenuItem>
+              <MenuItem value={96}>Phrasal verb</MenuItem>
             </Select>
           </FormControl>
         </div>

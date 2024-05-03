@@ -2,6 +2,7 @@ import "./App.css";
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/navigation";
+// import CircularProgress from "@mui/material/CircularProgress";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage/Register"));
