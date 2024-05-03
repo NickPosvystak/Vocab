@@ -1,10 +1,11 @@
 import "./App.css";
 import { Suspense, lazy } from "react";
-import Home from "./pages/Home/Home";
+// import Home from "./pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import Navigation from "./components/Navigation/navigation";
 
+const Home = lazy(() => import("./pages/Home/Home"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage/Register"));
 const LoginPage = lazy(() => import("./pages/LoginPage/Login"));
 const RecommendPage = lazy(() => import("./pages/RecommendPage/Recommend"));
@@ -12,42 +13,43 @@ const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
 
 const appRoutes = [
   {
-    path: "/",
+    path: "/Vocab/my-app",
     element: <Home />,
   },
   {
-    path: "/register",
+    path: "/Vocab/register",
     element: <RegisterPage />,
   },
   {
-    path: "/login",
+    path: "/Vocab/login",
     element: <LoginPage />,
   },
   {
-    path: "/recommend",
+    path: "/Vocab/recommend",
     element: <RecommendPage />,
   },
   {
-    path: "/training",
+    path: "/Vocab/training",
     element: <TrainingPage />,
   },
 ];
 
 function App() {
   return (
-    <Router>
+    // <Router>
       <div className="App">
         <Navigation />
 
         <Suspense fallback="Loading....">
           <Routes>
-            {appRoutes.map(({ path, element }) => (
+            {/* {appRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
-            ))}
+            ))} */}
+            <Route path="/" element={<Home />} />
           </Routes>
         </Suspense>
       </div>
-    </Router>
+    // </Router>
   );
 }
 
