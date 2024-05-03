@@ -1,0 +1,26 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-talk" viewBox="0 0 32 32">
+<path fill="none" stroke="#fcfcfc" style="stroke: var(--color2, #fcfcfc)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M8 8l16 16"></path>
+</symbol>
+<symbol id="icon-logo" viewBox="0 0 32 32">
+<path fill="#85aa9f" style="fill: var(--color1, #85aa9f)" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+<path fill="#fcfcfc" style="fill: var(--color2, #fcfcfc)" d="M15.957 14.815c4.696-3.542 4.903-5.689 0-9.481-4.998 3.873-4.354 5.927 0 9.481zM5.333 16.045c3.793-4.904 5.939-4.696 9.481 0-3.554 4.353-5.608 4.997-9.481 0zM17.186 16.045c3.792-4.904 5.939-4.696 9.481 0-3.556 4.353-5.608 4.997-9.481 0zM15.957 17.185c4.903 3.793 4.696 5.939 0 9.481-4.354-3.555-4.998-5.608 0-9.481z"></path>
+</symbol>
+<symbol id="icon-toggle" viewBox="0 0 32 32">
+<path d="M16 22l-10-10 1.392-1.408 8.608 8.608 8.592-8.608 1.408 1.408-10 10z"></path>
+<path d="M7.392 10.592l-1.392 1.408 1.696 1.696 6.592 6.608 1.712 1.696 10-10-1.408-1.408-8.304 8.304-0.288 0.304-1.712-1.696-6.896-6.912z"></path>
+</symbol>
+<symbol id="icon-close" viewBox="0 0 32 32">
+<path fill="none" stroke="#fcfcfc" style="stroke: var(--color2, #fcfcfc)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M24 8l-16 16"></path>
+<path fill="none" stroke="#fcfcfc" style="stroke: var(--color2, #fcfcfc)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M8 8l16 16"></path>
+</symbol>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<path fill="none" stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.4" stroke="#85aa9f" style="stroke: var(--color1, #85aa9f)" d="M14.656 25.328c-5.888 0-10.656-4.784-10.656-10.672s4.768-10.656 10.656-10.656c5.888 0 10.672 4.768 10.672 10.656s-4.784 10.672-10.672 10.672z"></path>
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" stroke="#85aa9f" style="stroke: var(--color1, #85aa9f)" d="M28 28l-5.808-5.808"></path>
+</symbol>
+<symbol id="icon-menu" viewBox="0 0 32 32">
+<path d="M4 24v-2.667h24v2.667h-24zM4 17.333v-2.667h24v2.667h-24zM4 10.667v-2.667h24v2.667h-24z"></path>
+</symbol>
+</defs>
+</svg>
