@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Vocab/static/css/main.39a7eec2.css",
+    "main.css": "/Vocab/static/css/main.ce7109c3.css",
     "main.js": "/Vocab/static/js/main.dc0f47f7.js",
     "static/css/743.67d04b00.chunk.css": "/Vocab/static/css/743.67d04b00.chunk.css",
     "static/js/743.c5acdd75.chunk.js": "/Vocab/static/js/743.c5acdd75.chunk.js",
@@ -17,7 +17,7 @@
     "static/media/illustration.png": "/Vocab/static/media/illustration.5679058f64edb126db26.png",
     "static/media/symbol-defs.svg": "/Vocab/static/media/symbol-defs.b789bc0995dcbd4640617599ad44cd63.svg",
     "index.html": "/Vocab/index.html",
-    "main.39a7eec2.css.map": "/Vocab/static/css/main.39a7eec2.css.map",
+    "main.ce7109c3.css.map": "/Vocab/static/css/main.ce7109c3.css.map",
     "main.dc0f47f7.js.map": "/Vocab/static/js/main.dc0f47f7.js.map",
     "743.67d04b00.chunk.css.map": "/Vocab/static/css/743.67d04b00.chunk.css.map",
     "743.c5acdd75.chunk.js.map": "/Vocab/static/js/743.c5acdd75.chunk.js.map",
@@ -33,7 +33,7 @@
     "677.0505b087.chunk.js.map": "/Vocab/static/js/677.0505b087.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.39a7eec2.css",
+    "static/css/main.ce7109c3.css",
     "static/js/main.dc0f47f7.js"
   ]
 }
