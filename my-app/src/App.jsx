@@ -14,6 +14,7 @@ const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
 
 function App() {
   return (
+    
     <div className="App">
       <Navigation />
 
