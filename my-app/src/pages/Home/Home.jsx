@@ -8,8 +8,8 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 
 import "./Home.styled.scss";
-// import sprite from "../../assets/svg/symbol-defs.svg";
 import { useState } from "react";
+import Table from "../../components/Task/Table";
 
 const Home = () => {
   const [category, setCategory] = useState("");
@@ -69,18 +69,7 @@ const Home = () => {
           </Box>
         </div>
       </label>
-      {/* <label className="label">
-        <div className="input-container">
-          <input
-            type="search"
-            placeholder="Find the word"
-            className="search-input"
-          />
-          <svg className="icon" width="20" height="20">
-            <use href={sprite + "#icon-search"}></use>
-          </svg>
-        </div>
-      </label> */}
+
       <label className="label">
         <div className="input-container">
           <FormControl
@@ -91,15 +80,13 @@ const Home = () => {
               "& .MuiOutlinedInput-root": {
                 borderColor: "rgb(133, 170, 159)",
                 "&:hover fieldset": {
-                  borderColor: "rgb(133, 170, 159)", // border color on hover
+                  borderColor: "rgb(133, 170, 159)",
                   boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
                 },
                 "&.Mui-focused fieldset": {
-                  borderColor: "rgb(133, 170, 159)", // border color when focused
+                  borderColor: "rgb(133, 170, 159)",
                 },
               },
-
-              // padding: "12px 24px",
             }}
           >
             <InputLabel
@@ -108,7 +95,6 @@ const Home = () => {
                 color: "#121417",
                 fontSize: "16px",
                 "&.Mui-focused": {
-                  // Note: No need to specify .MuiOutlinedInput-root here
                   color: "rgb(133, 170, 159)",
                 },
               }}
@@ -143,6 +129,7 @@ const Home = () => {
           </FormControl>
         </div>
       </label>
+      <Table />
     </section>
   );
 };
