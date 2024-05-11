@@ -131,7 +131,7 @@ const Home = () => {
           </div>
         </label>
       </div>
-      <div>
+      <div className="container-table">
         <Table />
       </div>
     </section>
