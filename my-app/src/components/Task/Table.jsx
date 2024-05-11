@@ -82,7 +82,6 @@ const Table = () => {
     useTable({ columns, data });
 
   return (
-    <div className="App">
       <div className="container">
         <table {...getTableProps()}>
           <thead>
@@ -112,7 +111,6 @@ const Table = () => {
           </tbody>
         </table>
       </div>
-    </div>
   );
 };
 
