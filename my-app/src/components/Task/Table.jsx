@@ -1,43 +1,13 @@
 import React, { useMemo } from "react";
-// import { flexRender, getCoreRowModel } from "@tanstack/react-table";
+// import { flexRender, getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import DATA from "../../data";
 // import { Box } from "@mui/material";
 // import { useState } from "react";
 import "./Table.styled.scss";
-import fakeData from "../../FAKE_DATA.json";
 import { useTable } from "react-table";
 
 const Table = () => {
-  //  const data = useMemo(() => fakeData, []);
-  //  const columns = useMemo(
-  //    () => [
-  //      {
-  //        Header: "ID",
-  //        accessor: "id",
-  //      },
-  //      {
-  //        Header: "First Name",
-  //        accessor: "first_name",
-  //      },
-  //      {
-  //        Header: "Last Name",
-  //        accessor: "last_name",
-  //      },
-  //      {
-  //        Header: "Email",
-  //        accessor: "email",
-  //      },
-  //      {
-  //        Header: "Gender",
-  //        accessor: "gender",
-  //      },
-  //      {
-  //        Header: "University",
-  //        accessor: "university",
-  //      },
-  //    ],
-  //    []
-  //  );
+
   const data = useMemo(() => DATA, []);
   const columns = useMemo(
     () => [
