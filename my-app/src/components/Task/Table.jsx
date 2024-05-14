@@ -6,41 +6,46 @@ import DATA from "../../data";
 import "./Table.styled.scss";
 import { useTable } from "react-table";
 
-const Table = ({ searchValue, category }) => {
-    const filteredData = useMemo(() => {
-      return DATA.filter((item) => {
-        const matchesSearch = item.Word.toLowerCase().includes(
-          searchValue.toLowerCase()
-        );
-        const matchesCategory = category ? item.Category === category : true;
-        return matchesSearch && matchesCategory;
-      });
-    }, [searchValue, category]);
+const Table = ({ searchValue, category, handleChange }) => {
+  const filteredData = useMemo(() => {
+    return DATA.filter((item) => {
+      const matchesSearch = item.Word.toLowerCase().includes(
+        searchValue.toLowerCase()
+      );
+      const matchesCategory = category ? item.Category === category : true;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchValue, category]);
+  console.log(filteredData);
 
-  // const data = useMemo(() => DATA, []);
   const columns = useMemo(
     () => [
       {
+        id:"Word",
         accessor: "Word",
         Header: "Word",
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
+        id:"Translation",
         accessor: "Translation",
         Header: "Translation",
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
+        id:"Category",
         accessor: "Category",
         Header: "Category",
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
+        id: "Progress",
         accessor: "Progress",
         Header: "Progress",
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
+        id:"Edit",
         accessor: "Edit",
         Header: "Edit",
         cell: (props) => <p>{props.getValue()}</p>,
@@ -49,39 +54,27 @@ const Table = ({ searchValue, category }) => {
     []
   );
 
-  // const [data, setData] = useState(DATA);
-  // const table = useReactTable({
-  //   data,
-  //   columns,
-  //   getCoreRowModel: getCoreRowModel(),
-  // });
-  // console.log(table.getHeaderGroups());
-
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: filteredData });
 
   return (
-    <table {...getTableProps()}>
+    <table>
       <thead>
         {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
+          <tr key={headerGroup.id}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()} key={column.id}>
-                {column.render("Header")}
-              </th>
+              <th key={column.id}>{column.render("Header")}</th>
             ))}
           </tr>
         ))}
       </thead>
-      <tbody {...getTableBodyProps()}>
+      <tbody>
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} key={row.id}>
+            <tr key={row.id}>
               {row.cells.map((cell) => (
-                <td {...cell.getCellProps()} key={cell.column.id}>
-                  {cell.render("Cell")}
-                </td>
+                <td key={cell.column.id}>{cell.render("Cell")}</td>
               ))}
             </tr>
           );
@@ -90,5 +83,6 @@ const Table = ({ searchValue, category }) => {
     </table>
   );
 };
+
 
 export default Table;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from 'react'
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -7,33 +7,32 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 
-import "./Home.styled.scss";
-import { useState } from "react";
-import Table from "../../components/Task/Table";
-import DATA from "../../data";
+import "./SelectInput.styled.scss"
+import DATA from '../../data';
 
-const Home = () => {
-  const [category, setCategory] = useState("");
-  const [searchValue, setSearchValue] = useState("");
-  const [filteredWords, setFilteredWords] = useState(DATA);
 
-  const handleChange = (event) => {
-    const selectedCategory = event.target.value;
-    setCategory(selectedCategory);
-    setCategory("");
+const SelectInput = () => {
+     const [category, setCategory] = useState("");
+     const [searchValue, setSearchValue] = useState("");
+     const [filteredWords, setFilteredWords] = useState(DATA);
 
-    const newFilteredWords = selectedCategory
-      ? DATA.filter((word) => word.Category === selectedCategory)
-      : DATA;
-    setFilteredWords(newFilteredWords);
-  };
+     const handleChange = (event) => {
+       const selectedCategory = event.target.value;
+       setCategory(selectedCategory);
+       setCategory("");
 
-  const handleSearchChange = (event) => {
-    setSearchValue(event.target.value);
-  };
+       const newFilteredWords = selectedCategory
+         ? DATA.filter((word) => word.Category === selectedCategory)
+         : DATA;
+       setFilteredWords(newFilteredWords);
+     };
+
+     const handleSearchChange = (event) => {
+       setSearchValue(event.target.value);
+     };
 
   return (
-    <section className="container">
+    <div>
       <div className="container-select">
         <label className="label">
           <div className="input-container">
@@ -148,15 +147,8 @@ const Home = () => {
           </div>
         </label>
       </div>
-      <div className="container-table">
-        <Table
-          searchValue={searchValue}
-          category={category}
-          handleChange={handleChange}
-          data={filteredWords}
-        />
-      </div>
-    </section>
+    </div>
   );
-};
-export default Home;
+}
+
+export default SelectInput
