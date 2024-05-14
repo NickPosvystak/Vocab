@@ -1,9 +1,15 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./RecommendPage.styled.scss";
-import { flexRender, getCoreRowModel, getFilteredRowModel, getPaginationRowModel, getSortedRowModel, useReactTable } from "@tanstack/react-table";
+import {
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from "@tanstack/react-table";
 import DATA from "../../data";
 import DebouncedInput from "../../components/Debounce/DebouncedInput";
-
 
 const RecommendPage = () => {
   const [columnFilters, setColumnFilters] = useState([]);
@@ -29,13 +35,13 @@ const RecommendPage = () => {
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
-        id:"Progress",
+        id: "Progress",
         accessor: "Progress",
         Header: "Progress",
         cell: (props) => <p>{props.getValue()}</p>,
       },
       {
-        id:"Edit",
+        id: "Edit",
         accessor: "Edit",
         Header: "Edit",
         cell: (props) => <p>{props.getValue()}</p>,
@@ -43,7 +49,7 @@ const RecommendPage = () => {
     ],
     []
   );
-// const data = DATA(7);
+  // const data = DATA(7);
   const [data, setData] = useState(DATA);
   const refreshData = () => setData(DATA);
 
@@ -56,7 +62,7 @@ const RecommendPage = () => {
     },
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
-    getFilteredRowModel: getFilteredRowModel(), 
+    getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     debugTable: true,
@@ -66,7 +72,7 @@ const RecommendPage = () => {
 
   return (
     <div className="container-rec">
-      <div className="p-2">
+      <div>
         <table>
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -76,7 +82,7 @@ const RecommendPage = () => {
                     <th key={header.id} colSpan={header.colSpan}>
                       {header.isPlaceholder ? null : (
                         <>
-                          <div
+                          {/* <div
                             {...{
                               className: header.column.getCanSort()
                                 ? "cursor-pointer select-none"
@@ -97,7 +103,7 @@ const RecommendPage = () => {
                             <div>
                               <filter column={header.column} />
                             </div>
-                          ) : null}
+                          ) : null} */}
                           <DebouncedInput
                             type="text"
                             value={header.column.getFilterValue() || ""}
@@ -105,7 +111,7 @@ const RecommendPage = () => {
                               header.column.setFilterValue(value)
                             }
                             placeholder={`Search...`}
-                            className="w-36 border shadow rounded"
+                            
                           />
                         </>
                       )}
