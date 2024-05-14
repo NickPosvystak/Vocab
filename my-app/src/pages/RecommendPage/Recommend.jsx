@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./RecommendPage.styled.scss";
 import {
+  createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -14,42 +15,38 @@ import DebouncedInput from "../../components/Debounce/DebouncedInput";
 const RecommendPage = () => {
   const [columnFilters, setColumnFilters] = useState([]);
 
+  const columnHelper = createColumnHelper();
+
   const columns = React.useMemo(
     () => [
-      {
+      columnHelper.accessor("Word", {
         id: "Word",
-        accessor: "Word",
-        Header: "Word",
+        header: "Word",
         cell: (props) => <p>{props.getValue()}</p>,
-      },
-      {
+      }),
+      columnHelper.accessor("Translation", {
         id: "Translation",
-        accessor: "Translation",
-        Header: "Translation",
+        header: "Translation",
         cell: (props) => <p>{props.getValue()}</p>,
-      },
-      {
+      }),
+      columnHelper.accessor("Category", {
         id: "Category",
-        accessor: "Category",
-        Header: "Category",
         cell: (props) => <p>{props.getValue()}</p>,
-      },
-      {
+      }),
+
+      columnHelper.accessor("Progress", {
         id: "Progress",
-        accessor: "Progress",
-        Header: "Progress",
         cell: (props) => <p>{props.getValue()}</p>,
-      },
-      {
+      }),
+
+      columnHelper.accessor("Edit", {
         id: "Edit",
-        accessor: "Edit",
-        Header: "Edit",
         cell: (props) => <p>{props.getValue()}</p>,
-      },
+      }),
     ],
-    []
+    [columnHelper]
   );
-  // const data = DATA(7);
+
   const [data, setData] = useState(DATA);
   const refreshData = () => setData(DATA);
 
@@ -77,47 +74,22 @@ const RecommendPage = () => {
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <th key={header.id} colSpan={header.colSpan}>
-                      {header.isPlaceholder ? null : (
-                        <>
-                          {/* <div
-                            {...{
-                              className: header.column.getCanSort()
-                                ? "cursor-pointer select-none"
-                                : "",
-                              onClick: header.column.getToggleSortingHandler(),
-                            }}
-                          >
-                            {flexRender(
-                              header.column.columnDef.header,
-                              header.getContext()
-                            )}
-                            {{
-                              asc: " 🔼",
-                              desc: " 🔽",
-                            }[header.column.getIsSorted()] ?? null}
-                          </div>
-                          {header.column.getCanFilter() ? (
-                            <div>
-                              <filter column={header.column} />
-                            </div>
-                          ) : null} */}
-                          <DebouncedInput
-                            type="text"
-                            value={header.column.getFilterValue() || ""}
-                            onChange={(value) =>
-                              header.column.setFilterValue(value)
-                            }
-                            placeholder={`Search...`}
-                            
-                          />
-                        </>
-                      )}
-                    </th>
-                  );
-                })}
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id}>
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                    {/* <DebouncedInput
+                      type="text"
+                      value={header.column.getFilterValue() || ""}
+                      onChange={(value) => header.column.setFilterValue(value)}
+                      placeholder={`Search...`}
+                    /> */}
+                  </th>
+                ))}
               </tr>
             ))}
           </thead>

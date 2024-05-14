@@ -13,9 +13,14 @@ import Table from "../../components/Task/Table";
 
 const Home = () => {
   const [category, setCategory] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const handleChange = (event) => {
     setCategory(event.target.value);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
   };
 
   return (
@@ -59,6 +64,8 @@ const Home = () => {
                   },
                   width: "100%",
                 }}
+                value={searchValue}
+                onChange={handleSearchChange}
                 InputProps={{
                   endAdornment: (
                     <SearchIcon
@@ -103,6 +110,7 @@ const Home = () => {
               >
                 Category
               </InputLabel>
+
               <Select
                 labelId="demo-select-small-label"
                 id="demo-select-small"
@@ -132,7 +140,7 @@ const Home = () => {
         </label>
       </div>
       <div className="container-table">
-        <Table />
+        <Table searchValue={searchValue} category={category} />
       </div>
     </section>
   );
