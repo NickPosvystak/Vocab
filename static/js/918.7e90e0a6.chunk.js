@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[918],{3918:(e,s,a)=>{a.r(s),a.d(s,{default:()=>l});a(5043);var c=a(579);const l=()=>(0,c.jsx)(c.Fragment,{children:(0,c.jsx)("div",{className:"title-recom",children:(0,c.jsx)("h1",{children:"Recommend Page"})})})}}]);
+//# sourceMappingURL=918.7e90e0a6.chunk.js.map
