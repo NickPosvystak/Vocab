@@ -8,13 +8,13 @@ import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 
 import "./SelectInput.styled.scss";
-import DATA from "../../data";
+// import DATA from "../../data";
 import TableTask from "../TableTask/TableTask";
 
 const SelectInput = () => {
   const [category, setCategory] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  const [filteredWords, setFilteredWords] = useState(DATA);
+  // const [filteredWords, setFilteredWords] = useState(DATA);
 
   const handleChange = (event) => {
     const selectedCategory = event.target.value;
