@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   createColumnHelper,
   flexRender,
@@ -9,9 +9,23 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import DATA from "../../data";
+import "./TableTask.styled.scss";
 
-function TableTask() {
+
+function TableTask({ searchValue, category }) {
   const [columnFilters, setColumnFilters] = useState([]);
+
+   const filteredData = useMemo(() => {
+     return DATA.filter((item) => {
+       const matchesSearch = item.Word.toLowerCase().includes(
+         searchValue.toLowerCase()
+       );
+       const matchesCategory = category ? item.Category === category : true;
+       return matchesSearch && matchesCategory;
+     });
+   }, [searchValue, category]);
+  console.log(filteredData);
+  
 
   const columnHelper = createColumnHelper();
 
@@ -45,13 +59,13 @@ function TableTask() {
     [columnHelper]
   );
 
-  const [data, setData] = useState(DATA);
-  const refreshData = () => setData(DATA);
+  // const [data, setData] = useState(DATA);
+  // const refreshData = () => setData(DATA);
 
   const table = useReactTable({
-    data,
+    data: filteredData,
     columns,
-    filterFns: {},
+    // filterFns: {},
     state: {
       columnFilters,
     },
@@ -66,7 +80,7 @@ function TableTask() {
   });
 
   return (
-    <div className="container-rec">
+    <div className="container-table">
       <div>
         <table>
           <thead>
@@ -176,9 +190,9 @@ function TableTask() {
         {/* <div>
           <button onClick={() => rerender()}>Force Rerender</button>
         </div> */}
-        <div>
+        {/* <div>
           <button onClick={() => refreshData()}>Refresh Data</button>
-        </div>
+        </div> */}
         <pre>
           {JSON.stringify(
             { columnFilters: table.getState().columnFilters },

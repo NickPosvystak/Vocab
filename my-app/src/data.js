@@ -1,4 +1,3 @@
-
 const DATA = [
   {
     Word: "Care",
@@ -35,7 +34,7 @@ const DATA = [
     Progress: 95,
     Edit: "edit",
   },
-  // Add 40 more examples here
+  // Additional examples
   {
     Word: "Dog",
     Translation: "Собака",
@@ -54,6 +53,41 @@ const DATA = [
     Word: "Friend",
     Translation: "Друг",
     Category: "Noun",
+    Progress: 90,
+    Edit: "edit",
+  },
+  {
+    Word: "Quickly",
+    Translation: "Швидко",
+    Category: "Adverb",
+    Progress: 85,
+    Edit: "edit",
+  },
+  {
+    Word: "Idea",
+    Translation: "Ідея",
+    Category: "Noun",
+    Progress: 88,
+    Edit: "edit",
+  },
+  {
+    Word: "Think",
+    Translation: "Думати",
+    Category: "Verb",
+    Progress: 82,
+    Edit: "edit",
+  },
+  {
+    Word: "Blue",
+    Translation: "Синій",
+    Category: "Adjective",
+    Progress: 77,
+    Edit: "edit",
+  },
+  {
+    Word: "Under",
+    Translation: "Під",
+    Category: "Preposition",
     Progress: 90,
     Edit: "edit",
   },

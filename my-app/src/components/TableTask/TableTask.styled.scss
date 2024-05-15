@@ -1,0 +1,38 @@
+.container-table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  font-size: small;
+//    width: 100%;
+//   padding: 0 1rem;
+  table {
+      min-width: 288px;
+      width: 90vw;
+    // min-width: 100vw;
+    // display: flex;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+    // flex-grow: 4; 
+    @media only screen and (min-width: 375px) {
+    //   min-width: 95vw;
+    }
+    @media only screen and (min-width: 768px) {
+    //   min-width: 100vw;
+    }
+  }
+  thead th {
+    background-color: var(--primaryColor);
+  }
+  th,
+  td {
+    background-color: rgba(107, 92, 92, 0.2);
+    color: #785555;
+  }
+  
+  th {
+    text-align: center;
+    color: #000;
+
+}
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./RecommendPage.styled.scss";
-import TableTask from "../../components/Task/TableTask";
+import TableTask from "../../components/TableTask/TableTask";
 import SelectInput from "../../components/Select/SelectInput";
 
 const RecommendPage = () => {
@@ -9,9 +9,9 @@ const RecommendPage = () => {
       <div>
         <SelectInput />
       </div>
-      <div className="container-rec">
+      {/* <div className="container-rec">
         <TableTask />
-      </div>
+      </div> */}
     </>
   );
 };

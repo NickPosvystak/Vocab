@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -7,29 +7,29 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 
-import "./SelectInput.styled.scss"
-import DATA from '../../data';
-
+import "./SelectInput.styled.scss";
+import DATA from "../../data";
+import TableTask from "../TableTask/TableTask";
 
 const SelectInput = () => {
-     const [category, setCategory] = useState("");
-     const [searchValue, setSearchValue] = useState("");
-     const [filteredWords, setFilteredWords] = useState(DATA);
+  const [category, setCategory] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredWords, setFilteredWords] = useState(DATA);
 
-     const handleChange = (event) => {
-       const selectedCategory = event.target.value;
-       setCategory(selectedCategory);
-       setCategory("");
+  const handleChange = (event) => {
+    const selectedCategory = event.target.value;
+    setCategory(selectedCategory);
+    setCategory("");
 
-       const newFilteredWords = selectedCategory
-         ? DATA.filter((word) => word.Category === selectedCategory)
-         : DATA;
-       setFilteredWords(newFilteredWords);
-     };
+    const newFilteredWords = selectedCategory
+      ? DATA.filter((word) => word.Category === selectedCategory)
+      : DATA;
+    setFilteredWords(newFilteredWords);
+  };
 
-     const handleSearchChange = (event) => {
-       setSearchValue(event.target.value);
-     };
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+  };
 
   return (
     <div>
@@ -147,8 +147,16 @@ const SelectInput = () => {
           </div>
         </label>
       </div>
+      <div>
+        <TableTask
+          searchValue={searchValue}
+          category={category}
+          handleChange={handleChange}
+          data={filteredWords}
+        />
+      </div>
     </div>
   );
-}
+};
 
-export default SelectInput
+export default SelectInput;

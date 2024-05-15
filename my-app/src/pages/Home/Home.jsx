@@ -148,14 +148,14 @@ const Home = () => {
           </div>
         </label>
       </div>
-      <div className="container-table">
+      {/* <div className="container-table">
         <Table
           searchValue={searchValue}
           category={category}
           handleChange={handleChange}
           data={filteredWords}
         />
-      </div>
+      </div> */}
     </section>
   );
 };
