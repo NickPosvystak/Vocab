@@ -1,17 +1,12 @@
 import React from "react";
 import "./RecommendPage.styled.scss";
-import TableTask from "../../components/TableTask/TableTask";
-import SelectInput from "../../components/Select/SelectInput";
 
 const RecommendPage = () => {
   return (
     <>
-      <div>
-        <SelectInput />
+      <div className="title-recom">
+        <h1>Recommend Page</h1>
       </div>
-      {/* <div className="container-rec">
-        <TableTask />
-      </div> */}
     </>
   );
 };
