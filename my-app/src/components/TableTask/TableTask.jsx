@@ -12,7 +12,7 @@ import DATA from "../../data";
 import "./TableTask.styled.scss";
 
 function TableTask({ searchValue, category }) {
-  const [columnFilters, setColumnFilters] = useState([]);
+  // const [columnFilters, setColumnFilters] = useState([]);
 
   const filteredData = useMemo(() => {
     return DATA.filter((item) => {
@@ -60,14 +60,15 @@ function TableTask({ searchValue, category }) {
   // const [data, setData] = useState(DATA);
   // const refreshData = () => setData(DATA);
 
+  
   const table = useReactTable({
     data: filteredData,
     columns,
     // filterFns: {},
-    state: {
-      columnFilters,
-    },
-    onColumnFiltersChange: setColumnFilters,
+    // state: {
+    //   columnFilters,
+    // },
+    // onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),

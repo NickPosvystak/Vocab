@@ -19,12 +19,12 @@ const SelectInput = () => {
   const handleChange = (event) => {
     const selectedCategory = event.target.value;
     setCategory(selectedCategory);
-    setCategory("");
+    // setCategory("");
 
-    const newFilteredWords = selectedCategory
-      ? DATA.filter((word) => word.Category === selectedCategory)
-      : DATA;
-    setFilteredWords(newFilteredWords);
+    // const newFilteredWords = selectedCategory
+    //   ? DATA.filter((word) => word.Category === selectedCategory)
+    //   : DATA;
+    // setFilteredWords(newFilteredWords);
   };
 
   const handleSearchChange = (event) => {
@@ -130,18 +130,18 @@ const SelectInput = () => {
                 }}
               >
                 <MenuItem className="input-label" value="">
-                  <em>None</em>
+                  <em>All</em>
                 </MenuItem>
-                <MenuItem value={10}>Verb</MenuItem>
-                <MenuItem value={20}>Participle</MenuItem>
-                <MenuItem value={40}>Adjective</MenuItem>
-                <MenuItem value={50}>Pronoun</MenuItem>
-                <MenuItem value={60}>Numerals</MenuItem>
-                <MenuItem value={70}>Adverb</MenuItem>
-                <MenuItem value={80}>Preposition</MenuItem>
-                <MenuItem value={90}>Conjuction</MenuItem>
-                <MenuItem value={95}>Phrasal verb</MenuItem>
-                <MenuItem value={96}>Phrasal verb</MenuItem>
+                <MenuItem value="Verb">Verb</MenuItem>
+                <MenuItem value="Participle">Participle</MenuItem>
+                <MenuItem value="Adjective">Adjective</MenuItem>
+                <MenuItem value="Pronoun">Pronoun</MenuItem>
+                <MenuItem value="Numerals">Numerals</MenuItem>
+                <MenuItem value="Adverb">Adverb</MenuItem>
+                <MenuItem value="Preposition">Preposition</MenuItem>
+                <MenuItem value="Conjuction">Conjuction</MenuItem>
+                <MenuItem value="Phrasal verb">Phrasal verb</MenuItem>
+                <MenuItem value="Functional phrase">Functional phrase</MenuItem>
               </Select>
             </FormControl>
           </div>
@@ -151,8 +151,8 @@ const SelectInput = () => {
         <TableTask
           searchValue={searchValue}
           category={category}
-          handleChange={handleChange}
-          data={filteredWords}
+          // handleChange={handleChange}
+          // data={filteredWords}
         />
       </div>
     </div>
