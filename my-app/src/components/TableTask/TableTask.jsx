@@ -17,11 +17,11 @@ function TableTask({ searchValue, category }) {
   // const [columnFilters, setColumnFilters] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
 
- const handleEdit = (props) => {
-   const wordValue = props.row.original.Word;
-   setSelectedValue(wordValue);
-   console.log("Click on edit", { wordValue });
- };
+  const handleEdit = (props) => {
+    const wordValue = props.row.original.Word;
+    setSelectedValue(wordValue);
+    console.log("Click on edit", { wordValue });
+  };
   const handleDelete = (value) => {
     console.log("Click on Delete", { value });
   };
@@ -62,18 +62,15 @@ function TableTask({ searchValue, category }) {
       columnHelper.accessor("Edit", {
         id: "Edit",
         cell: (props) => (
-          
           <ButtonEdit
             onEdit={() => handleEdit(props)}
             onDelete={() => handleDelete(props.row.original.Word)}
           />
-        )
-        
+        ),
       }),
     ],
     [columnHelper]
   );
-
 
   const table = useReactTable({
     data: filteredData,
