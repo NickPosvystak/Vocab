@@ -1,7 +1,78 @@
 .container-train {
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  background-color: antiquewhite;
+
+  .part-one {
+    display: flex;
+    flex-direction: column;
+
+    .title-tr {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 0 6px;
+      color: var(--secondColor);
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 32px;
+      }
+    }
+    .description-tr {
+      margin-bottom: 132px;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 0 6px;
+      @media only screen and (min-width: 768px) {
+        margin-bottom: 64px;
+      }
+    }
+    .buttons-box {
+      display: flex;
+      flex-direction: column;
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+    }
+    .btn-tr {
+      padding: 16px 121px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--textColor);
+      background-color: var(--primaryColor);
+      border-radius: 30px;
+      @media only screen and (min-width: 768px) {
+        padding: 14px 64px;
+      }
+    }
+    .btn-tr-off {
+      padding: 8px 133px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--mainColor);
+      background-color: transparent;
+      @media only screen and (min-width: 768px) {
+        padding: 14px 71px;
+        color: var(--primaryColor);
+        border: 1px solid var(--primaryColor);
+        border-radius: 30px;
+      }
+    }
+    .image-tr {
+      margin-top: 72px;
+      @media only screen and (min-width: 768px) {
+        margin-top: 140px;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      width: 581px;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 32px;
+    margin-top: 193px;
+  }
 }

@@ -7,6 +7,8 @@
   /* Login */
   --mainColor: rgba(18, 20, 23, 0.5);
   --secondColorFocus: rgb(18, 20, 23);
+  /* button */
+  --textColor: rgb(252, 252, 252);
 }
 @import url("https://fonts.googleapis.com/css2?family=MacPaw+Fixel+Display:wght@400;700&display=swap");
 
