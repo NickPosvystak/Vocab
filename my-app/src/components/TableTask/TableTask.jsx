@@ -11,15 +11,18 @@ import {
 import DATA from "../../data";
 import "./TableTask.styled.scss";
 import ButtonEdit from "../Edit/ButtonEdit";
+import { useState } from "react";
 
 function TableTask({ searchValue, category }) {
   // const [columnFilters, setColumnFilters] = useState([]);
+  // const [data, setData] = useState();
 
   const handleEdit = (rowIndex) => {
     console.log("edit");
   };
   const handleDelete = (rowIndex) => {
     console.log("Delete");
+    //  setData((prevData) => prevData.filter((_, index) => index !== rowIndex));
   };
   const filteredData = useMemo(() => {
     return DATA.filter((item) => {
@@ -58,12 +61,12 @@ function TableTask({ searchValue, category }) {
 
       columnHelper.accessor("Edit", {
         id: "Edit",
-        cell: (props) => {
+        cell: 
           <ButtonEdit
-            onEdit={() => handleEdit(props.row.index)}
-            onDelete={() => handleDelete(props.row.index)}
-          />;
-        },
+            // onEdit={() => handleEdit()}
+            // onDelete={() => handleDelete()}
+          />,
+        
       }),
     ],
     [columnHelper]

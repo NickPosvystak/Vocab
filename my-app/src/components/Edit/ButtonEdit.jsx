@@ -62,7 +62,7 @@ export default function ButtonEdit({ onEdit, onDelete }) {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-          Dashboard
+          Edit
         </Button>
         <Popper
           open={open}
