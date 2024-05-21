@@ -15,14 +15,15 @@ import { useState } from "react";
 
 function TableTask({ searchValue, category }) {
   // const [columnFilters, setColumnFilters] = useState([]);
-  // const [data, setData] = useState();
+  const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleEdit = () => {
-    console.log("Click on edit");
-  };
-  const handleDelete = (event) => {
-    console.log("Click on Delete");
-    //  setData((prevData) => prevData.filter((_, index) => index !== rowIndex));
+ const handleEdit = (props) => {
+   const wordValue = props.row.original.Word;
+   setSelectedValue(wordValue);
+   console.log("Click on edit", { wordValue });
+ };
+  const handleDelete = (value) => {
+    console.log("Click on Delete", { value });
   };
   const filteredData = useMemo(() => {
     return DATA.filter((item) => {
@@ -33,7 +34,6 @@ function TableTask({ searchValue, category }) {
       return matchesSearch && matchesCategory;
     });
   }, [searchValue, category]);
-  console.log(filteredData);
 
   const columnHelper = createColumnHelper();
 
@@ -61,19 +61,19 @@ function TableTask({ searchValue, category }) {
 
       columnHelper.accessor("Edit", {
         id: "Edit",
-        cell: 
+        cell: (props) => (
+          
           <ButtonEdit
-            onEdit={() => handleEdit()}
-            onDelete={() => handleDelete()}
-          />,
+            onEdit={() => handleEdit(props)}
+            onDelete={() => handleDelete(props.row.original.Word)}
+          />
+        )
         
       }),
     ],
     [columnHelper]
   );
 
-  // const [data, setData] = useState(DATA);
-  // const refreshData = () => setData(DATA);
 
   const table = useReactTable({
     data: filteredData,
@@ -87,9 +87,9 @@ function TableTask({ searchValue, category }) {
     getFilteredRowModel: getFilteredRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: false,
+    // debugTable: true,
+    // debugHeaders: true,
+    // debugColumns: false,
   });
 
   return (

@@ -8,9 +8,10 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 
-export default function ButtonEdit({ onEdit, onDelete }) {
+export default function ButtonEdit({ value,onEdit, onDelete }) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+  
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -23,16 +24,17 @@ export default function ButtonEdit({ onEdit, onDelete }) {
 
     setOpen(false);
   };
-    const handleEdit = (e) => {
-        e.preventDefault();
-    onEdit();
-    handleClose(e.target.value);
-  };
-    const handleDelete = (e) => {
-        e.preventDefault();
-    onDelete();
-    handleClose(e);
-  };
+    const handleEdit = (event) => {
+      event.preventDefault();
+      onEdit(value);
+      handleClose(event);
+    };
+
+    const handleDelete = (event) => {
+      event.preventDefault();
+      onDelete(value);
+      handleClose(event);
+    };
 
   function handleListKeyDown(event) {
     if (event.key === "Tab") {
