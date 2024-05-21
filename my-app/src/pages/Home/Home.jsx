@@ -9,25 +9,25 @@ import { fetchAllWords } from "../../redux/operations";
 import { selectWords } from "../../redux/selectors";
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const { words } = useSelector(selectWords);
+  // const dispatch = useDispatch();
+  // const { words } = useSelector(selectWords);
 
 
-  useEffect(() => {
-    dispatch(fetchAllWords());
-    },[dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchAllWords());
+  //   },[dispatch]);
 
-    const filteredWords = Array.isArray(words) ? words : [];
-    console.log('filteredWords: ', filteredWords);
+  //   const filteredWords = Array.isArray(words) ? words : [];
+  //   console.log('filteredWords: ', filteredWords);
   return (
     <section className="home-container">
-      {filteredWords.length > 0 && (
+      {/* {filteredWords.length > 0 && (
         <ul>
           {filteredWords.map((word, index) => (
             <li key={index}>{word}</li>
           ))}
         </ul>
-      )}
+      )} */}
       <SelectInput />
       {/* LOGO REACT */}
       <div className="logo-box">

@@ -10,10 +10,17 @@ import {
 } from "@tanstack/react-table";
 import DATA from "../../data";
 import "./TableTask.styled.scss";
+import ButtonEdit from "../Edit/ButtonEdit";
 
 function TableTask({ searchValue, category }) {
   // const [columnFilters, setColumnFilters] = useState([]);
 
+  const handleEdit = (rowIndex) => {
+    console.log("edit");
+  };
+  const handleDelete = (rowIndex) => {
+    console.log("Delete");
+  };
   const filteredData = useMemo(() => {
     return DATA.filter((item) => {
       const matchesSearch = item.Word.toLowerCase().includes(
@@ -51,7 +58,12 @@ function TableTask({ searchValue, category }) {
 
       columnHelper.accessor("Edit", {
         id: "Edit",
-        cell: (props) => <p>{props.getValue()}</p>,
+        cell: (props) => {
+          <ButtonEdit
+            onEdit={() => handleEdit(props.row.index)}
+            onDelete={() => handleDelete(props.row.index)}
+          />;
+        },
       }),
     ],
     [columnHelper]
@@ -60,7 +72,6 @@ function TableTask({ searchValue, category }) {
   // const [data, setData] = useState(DATA);
   // const refreshData = () => setData(DATA);
 
-  
   const table = useReactTable({
     data: filteredData,
     columns,
