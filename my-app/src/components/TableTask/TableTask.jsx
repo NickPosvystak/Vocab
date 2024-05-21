@@ -17,11 +17,11 @@ function TableTask({ searchValue, category }) {
   // const [columnFilters, setColumnFilters] = useState([]);
   // const [data, setData] = useState();
 
-  const handleEdit = (rowIndex) => {
-    console.log("edit");
+  const handleEdit = () => {
+    console.log("Click on edit");
   };
-  const handleDelete = (rowIndex) => {
-    console.log("Delete");
+  const handleDelete = (event) => {
+    console.log("Click on Delete");
     //  setData((prevData) => prevData.filter((_, index) => index !== rowIndex));
   };
   const filteredData = useMemo(() => {
@@ -63,8 +63,8 @@ function TableTask({ searchValue, category }) {
         id: "Edit",
         cell: 
           <ButtonEdit
-            // onEdit={() => handleEdit()}
-            // onDelete={() => handleDelete()}
+            onEdit={() => handleEdit()}
+            onDelete={() => handleDelete()}
           />,
         
       }),

@@ -23,13 +23,15 @@ export default function ButtonEdit({ onEdit, onDelete }) {
 
     setOpen(false);
   };
-  const handleEdit = () => {
+    const handleEdit = (e) => {
+        e.preventDefault();
     onEdit();
-    handleClose();
+    handleClose(e.target.value);
   };
-  const handleDelete = () => {
+    const handleDelete = (e) => {
+        e.preventDefault();
     onDelete();
-    handleClose();
+    handleClose(e);
   };
 
   function handleListKeyDown(event) {
@@ -70,7 +72,6 @@ export default function ButtonEdit({ onEdit, onDelete }) {
           role={undefined}
           placement="bottom-start"
           transition
-          disablePortal
         >
           {({ TransitionProps, placement }) => (
             <Grow
