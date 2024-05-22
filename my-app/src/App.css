@@ -5,6 +5,12 @@
   /* padding: 0 16px 16px 16px; */
   padding-left: 6px;
   padding-right: 6px;
+  .loader{
+     display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 375px) {
