@@ -135,7 +135,7 @@ function TableTask({ searchValue, category }) {
       </table>
       <div className="h-2">
 
-      <div className="flex items-center gap-2">
+      <div className="b-1">
         <button
           className="border rounded p-1"
           onClick={() => table.setPageIndex(0)}
@@ -164,15 +164,15 @@ function TableTask({ searchValue, category }) {
         >
           {">>"}
         </button>
-        <span className="flex items-center gap-1">
-          <div>Page</div>
+        <div className="h-3">
+          <h3>Page</h3>
           <strong>
             {table.getState().pagination.pageIndex + 1} of{" "}
             {table.getPageCount()}
           </strong>
-        </span>
-        <span className="flex items-center gap-1">
-          | Go to page:
+        </div>
+        <div className="h-4">
+          <h3>Go to page:</h3>
           <input
             type="number"
             defaultValue={table.getState().pagination.pageIndex + 1}
@@ -180,9 +180,9 @@ function TableTask({ searchValue, category }) {
               const page = e.target.value ? Number(e.target.value) - 1 : 0;
               table.setPageIndex(page);
             }}
-            className="border p-1 rounded w-16"
+           className="i-last"
           />
-        </span>
+        </div>
         <select
           value={table.getState().pagination.pageSize}
           onChange={(e) => {
