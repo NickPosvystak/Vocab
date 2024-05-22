@@ -43,6 +43,9 @@
       color: var(--textColor);
       background-color: var(--primaryColor);
       border-radius: 30px;
+      &:hover,&:focus {
+        background-color: var(--onFocus);
+      }
       @media only screen and (min-width: 768px) {
         padding: 14px 64px;
       }
@@ -58,6 +61,10 @@
         color: var(--primaryColor);
         border: 1px solid var(--primaryColor);
         border-radius: 30px;
+        &:hover,&:focus {
+          color: var(--textColor);
+          background-color: var(--onFocus);
+        }
       }
     }
     .image-tr {
