@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/Vocab/static/css/main.8b1c89a1.css",
-    "main.js": "/Vocab/static/js/main.d2bd7ad1.js",
-    "static/css/38.0b822d25.chunk.css": "/Vocab/static/css/38.0b822d25.chunk.css",
-    "static/js/38.c4ae8c47.chunk.js": "/Vocab/static/js/38.c4ae8c47.chunk.js",
+    "main.js": "/Vocab/static/js/main.ffa8a0c7.js",
+    "static/css/38.31556073.chunk.css": "/Vocab/static/css/38.31556073.chunk.css",
+    "static/js/38.c3b4f70d.chunk.js": "/Vocab/static/js/38.c3b4f70d.chunk.js",
     "static/css/907.ca4a4a14.chunk.css": "/Vocab/static/css/907.ca4a4a14.chunk.css",
     "static/js/907.80f5c62b.chunk.js": "/Vocab/static/js/907.80f5c62b.chunk.js",
     "static/css/975.986fa313.chunk.css": "/Vocab/static/css/975.986fa313.chunk.css",
@@ -11,17 +11,18 @@
     "static/css/918.e8bad398.chunk.css": "/Vocab/static/css/918.e8bad398.chunk.css",
     "static/js/918.7e90e0a6.chunk.js": "/Vocab/static/js/918.7e90e0a6.chunk.js",
     "static/css/126.d1e15d85.chunk.css": "/Vocab/static/css/126.d1e15d85.chunk.css",
-    "static/js/126.85e03a9c.chunk.js": "/Vocab/static/js/126.85e03a9c.chunk.js",
+    "static/js/126.9fdff1c8.chunk.js": "/Vocab/static/js/126.9fdff1c8.chunk.js",
     "static/js/858.36d132a2.chunk.js": "/Vocab/static/js/858.36d132a2.chunk.js",
-    "static/js/173.7eda7adf.chunk.js": "/Vocab/static/js/173.7eda7adf.chunk.js",
+    "static/js/970.1e9d23a5.chunk.js": "/Vocab/static/js/970.1e9d23a5.chunk.js",
+    "static/js/602.9e56a8ee.chunk.js": "/Vocab/static/js/602.9e56a8ee.chunk.js",
     "static/media/illustration.png": "/Vocab/static/media/illustration.5679058f64edb126db26.png",
     "static/media/report.png": "/Vocab/static/media/report.2a842db9a221ab5920cf.png",
     "static/media/symbol-defs.svg": "/Vocab/static/media/symbol-defs.3d7f026ea3c03456d81920e606719b46.svg",
     "index.html": "/Vocab/index.html",
     "main.8b1c89a1.css.map": "/Vocab/static/css/main.8b1c89a1.css.map",
-    "main.d2bd7ad1.js.map": "/Vocab/static/js/main.d2bd7ad1.js.map",
-    "38.0b822d25.chunk.css.map": "/Vocab/static/css/38.0b822d25.chunk.css.map",
-    "38.c4ae8c47.chunk.js.map": "/Vocab/static/js/38.c4ae8c47.chunk.js.map",
+    "main.ffa8a0c7.js.map": "/Vocab/static/js/main.ffa8a0c7.js.map",
+    "38.31556073.chunk.css.map": "/Vocab/static/css/38.31556073.chunk.css.map",
+    "38.c3b4f70d.chunk.js.map": "/Vocab/static/js/38.c3b4f70d.chunk.js.map",
     "907.ca4a4a14.chunk.css.map": "/Vocab/static/css/907.ca4a4a14.chunk.css.map",
     "907.80f5c62b.chunk.js.map": "/Vocab/static/js/907.80f5c62b.chunk.js.map",
     "975.986fa313.chunk.css.map": "/Vocab/static/css/975.986fa313.chunk.css.map",
@@ -29,12 +30,13 @@
     "918.e8bad398.chunk.css.map": "/Vocab/static/css/918.e8bad398.chunk.css.map",
     "918.7e90e0a6.chunk.js.map": "/Vocab/static/js/918.7e90e0a6.chunk.js.map",
     "126.d1e15d85.chunk.css.map": "/Vocab/static/css/126.d1e15d85.chunk.css.map",
-    "126.85e03a9c.chunk.js.map": "/Vocab/static/js/126.85e03a9c.chunk.js.map",
+    "126.9fdff1c8.chunk.js.map": "/Vocab/static/js/126.9fdff1c8.chunk.js.map",
     "858.36d132a2.chunk.js.map": "/Vocab/static/js/858.36d132a2.chunk.js.map",
-    "173.7eda7adf.chunk.js.map": "/Vocab/static/js/173.7eda7adf.chunk.js.map"
+    "970.1e9d23a5.chunk.js.map": "/Vocab/static/js/970.1e9d23a5.chunk.js.map",
+    "602.9e56a8ee.chunk.js.map": "/Vocab/static/js/602.9e56a8ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8b1c89a1.css",
-    "static/js/main.d2bd7ad1.js"
+    "static/js/main.ffa8a0c7.js"
   ]
 }
