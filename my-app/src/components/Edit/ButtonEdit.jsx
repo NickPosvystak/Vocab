@@ -7,11 +7,12 @@ import Popper from "@mui/material/Popper";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
+import sprite from "../../assets/svg/symbol-defs.svg";
+import "./ButtonEdit.styled.scss";
 
-export default function ButtonEdit({ value,onEdit, onDelete }) {
+export default function ButtonEdit({ value, onEdit, onDelete }) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-  
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -24,17 +25,17 @@ export default function ButtonEdit({ value,onEdit, onDelete }) {
 
     setOpen(false);
   };
-    const handleEdit = (event) => {
-      event.preventDefault();
-      onEdit(value);
-      handleClose(event);
-    };
+  const handleEdit = (event) => {
+    event.preventDefault();
+    onEdit(value);
+    handleClose(event);
+  };
 
-    const handleDelete = (event) => {
-      event.preventDefault();
-      onDelete(value);
-      handleClose(event);
-    };
+  const handleDelete = (event) => {
+    event.preventDefault();
+    onDelete(value);
+    handleClose(event);
+  };
 
   function handleListKeyDown(event) {
     if (event.key === "Tab") {
@@ -91,8 +92,18 @@ export default function ButtonEdit({ value,onEdit, onDelete }) {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                    <MenuItem onClick={handleEdit}>Edit</MenuItem>
-                    <MenuItem onClick={handleDelete}>Delete</MenuItem>
+                    <MenuItem onClick={handleEdit}>
+                      <svg class="icon-edit" width="16" height="16">
+                        <use href={sprite + "#icon-edit"}></use>
+                      </svg>
+                      Edit
+                    </MenuItem>
+                    <MenuItem onClick={handleDelete}>
+                      <svg class="icon-trash" width="16" height="16">
+                        <use href={sprite + "#icon-trash"}></use>
+                      </svg>
+                      Delete
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>
