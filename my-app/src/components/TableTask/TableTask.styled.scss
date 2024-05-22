@@ -44,4 +44,20 @@
       font-size: 22px;
     }
   }
+  .h-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .border{
+      border: 1px solid var(--primaryColor);
+      border-radius: 6px;
+      padding: 6px;
+      margin-right: 10px;
+      &:hover,&:focus{
+        border: 1px solid var(--onFocus);
+      }
+    }
+  }
 }

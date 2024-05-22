@@ -133,7 +133,8 @@ function TableTask({ searchValue, category }) {
           })}
         </tbody>
       </table>
-      <div className="h-2" />
+      <div className="h-2">
+
       <div className="flex items-center gap-2">
         <button
           className="border rounded p-1"
@@ -202,14 +203,15 @@ function TableTask({ searchValue, category }) {
       {/* <div>
           <button onClick={() => refreshData()}>Refresh Data</button>
         </div> */}
-      <pre>
+      {/* <pre>
         {JSON.stringify(
           { columnFilters: table.getState().columnFilters },
           null,
           2
         )}
-      </pre>
+      </pre> */}
     </div>
+      </div>
   );
 }
 

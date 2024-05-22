@@ -3,6 +3,12 @@ import "./Training.styled.scss";
 import report from "../../assets/images/report.png";
 
 const Training = () => {
+  const handleChange = () => {
+    alert("Clicked on Add word");
+  };
+  const handleDelete = () => {
+    alert("Clicked on Cancel");
+  };
   return (
     <div className="container-train">
       <div className="part-one">
@@ -15,8 +21,10 @@ const Training = () => {
           you are interested in adding to your study.
         </p>
         <div className="buttons-box">
-          <button className="btn-tr">Add word</button>
-          <button className="btn-tr-off">Cancel</button>
+          <button className="btn-tr" onClick={handleChange}>
+            Add word
+          </button>
+          <button className="btn-tr-off" onClick={handleDelete}>Cancel</button>
         </div>
       </div>
       <img src={report} alt="report" className="image-tr" />
