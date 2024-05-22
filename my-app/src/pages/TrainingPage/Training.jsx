@@ -1,13 +1,14 @@
 import React from "react";
 import "./Training.styled.scss";
 import report from "../../assets/images/report.png";
+import { Report } from "notiflix/build/notiflix-report-aio";
 
 const Training = () => {
   const handleChange = () => {
-    alert("Clicked on Add word");
+  Report.success('Clicked on Add word', 'Function comes soon', 'Okay')
   };
   const handleDelete = () => {
-    alert("Clicked on Cancel");
+    Report.failure("Clicked on Cancel", "Function comes soon", "Okay");
   };
   return (
     <div className="container-train">
