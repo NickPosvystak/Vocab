@@ -23,7 +23,7 @@ function TableTask({ searchValue, category }) {
     const wordValue = props.row.original.Word;
     setSelectedValue(wordValue);
     Confirm.show(
-      "Notiflix Confirm",
+      "Confirm",
       "Do you want to edit?",
       "Yes",
       "No",
@@ -39,7 +39,7 @@ function TableTask({ searchValue, category }) {
   };
   const handleDelete = (value) => {
     Confirm.show(
-      "Notiflix Confirm",
+      "Confirm",
       "Do you want to edit?",
       "Yes",
       "No",
