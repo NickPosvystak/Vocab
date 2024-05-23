@@ -20,7 +20,6 @@ const RecommendPage = () => {
   return (
     <>
       <div className="title-recom">
-        <h1>Recommend Page</h1>
         <WordsList words={words} />
       </div>
     </>
