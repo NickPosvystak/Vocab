@@ -11,8 +11,6 @@ const LoginPage = lazy(() => import("./pages/LoginPage/Login"));
 const RecommendPage = lazy(() => import("./pages/RecommendPage/Recommend"));
 const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
 
-
-
 function App() {
   return (
     <div className="App">
