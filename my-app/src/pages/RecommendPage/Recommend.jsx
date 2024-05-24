@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./RecommendPage.styled.scss";
 import { fetchWords } from "../../sevices/api";
 import WordsList from "../../components/WordsList/WordsList";
+import SelectInput from "../../components/Select/SelectInput";
 
 const RecommendPage = () => {
   const [words, setWords] = useState(null);
@@ -18,11 +19,14 @@ const RecommendPage = () => {
     fetchAllWords();
   }, []);
   return (
-    <>
+    <section className="r-section">
       <div className="title-recom">
         <WordsList words={words} />
       </div>
-    </>
+      <div>
+        {/* <SelectInput /> */}
+      </div>
+    </section>
   );
 };
 

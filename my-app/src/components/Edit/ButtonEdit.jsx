@@ -10,7 +10,6 @@ import Stack from "@mui/material/Stack";
 import sprite from "../../assets/svg/symbol-defs.svg";
 import "./ButtonEdit.styled.scss";
 
-
 export default function ButtonEdit({ value, onEdit, onDelete }) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -94,13 +93,13 @@ export default function ButtonEdit({ value, onEdit, onDelete }) {
                     onKeyDown={handleListKeyDown}
                   >
                     <MenuItem onClick={handleEdit}>
-                      <svg class="icon-edit" width="16" height="16">
+                      <svg className="icon-edit" width="16" height="16">
                         <use href={sprite + "#icon-edit"}></use>
                       </svg>
                       Edit
                     </MenuItem>
                     <MenuItem onClick={handleDelete}>
-                      <svg class="icon-trash" width="16" height="16">
+                      <svg className="icon-trash" width="16" height="16">
                         <use href={sprite + "#icon-trash"}></use>
                       </svg>
                       Delete
