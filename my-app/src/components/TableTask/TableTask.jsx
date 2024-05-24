@@ -68,14 +68,19 @@ function TableTask({ searchValue, category }) {
     console.log("Click on Delete", { value });
   };
   const filteredData = useMemo(() => {
+
     return words.filter((item) => {
-       const matchesSearch =
-       item.Word &&
-       item.Word.toLowerCase().includes(searchValue.toLowerCase());
-       const matchesCategory = category ? item.Category === category : true;
-       return matchesSearch && matchesCategory;
+
+      const matchesSearch = item.Word.toLowerCase().includes(
+        searchValue.toLowerCase()
+      );
+
+      const matchesCategory = category ? item.Category === category : true;
+
+      return matchesSearch && matchesCategory;
+      
     });
-  }, [words, searchValue, category]);
+  }, [searchValue, category, words]);
 
   const columnHelper = createColumnHelper();
 
