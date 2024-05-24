@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -14,10 +14,24 @@ import ButtonEdit from "../Edit/ButtonEdit";
 import { useState } from "react";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 import { Report } from "notiflix/build/notiflix-report-aio";
+import { fetchWords } from "../../sevices/api";
 
 function TableTask({ searchValue, category }) {
-  // const [columnFilters, setColumnFilters] = useState([]);
   const [selectedValue, setSelectedValue] = useState(null);
+  const [words, setWords] = useState([]);
+
+  useEffect(() => {
+    const fetchAllWords = async () => {
+      try {
+        const wordsData = await fetchWords();
+        console.log('wordsData: ', wordsData);
+        setWords(wordsData);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchAllWords();
+  }, []);
 
   const handleEdit = (props) => {
     const wordValue = props.row.original.Word;
@@ -54,14 +68,14 @@ function TableTask({ searchValue, category }) {
     console.log("Click on Delete", { value });
   };
   const filteredData = useMemo(() => {
-    return DATA.filter((item) => {
-      const matchesSearch = item.Word.toLowerCase().includes(
-        searchValue.toLowerCase()
-      );
-      const matchesCategory = category ? item.Category === category : true;
-      return matchesSearch && matchesCategory;
+    return words.filter((item) => {
+       const matchesSearch =
+       item.Word &&
+       item.Word.toLowerCase().includes(searchValue.toLowerCase());
+       const matchesCategory = category ? item.Category === category : true;
+       return matchesSearch && matchesCategory;
     });
-  }, [searchValue, category]);
+  }, [words, searchValue, category]);
 
   const columnHelper = createColumnHelper();
 
