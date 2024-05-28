@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { requestRegister } from "../services/apiContacts";
 
 export const registerThunk = createAsyncThunk(
   "auth/register",
@@ -9,10 +10,8 @@ export const registerThunk = createAsyncThunk(
 
       console.log("authData: ========>", authData);
 
-        return authData; // action payload
-        
+      return authData; // action payload
     } catch (error) {
-
       return ThunkAPI.rejectWithValue(error.message);
     }
   }

@@ -14,7 +14,7 @@ import ButtonEdit from "../Edit/ButtonEdit";
 import { useState } from "react";
 import { Confirm } from "notiflix/build/notiflix-confirm-aio";
 import { Report } from "notiflix/build/notiflix-report-aio";
-import { fetchWords } from "../../sevices/api";
+import { fetchWords } from "../../services/api";
 
 function TableTask({ searchValue, category }) {
   const [selectedValue, setSelectedValue] = useState(null);
@@ -24,7 +24,7 @@ function TableTask({ searchValue, category }) {
     const fetchAllWords = async () => {
       try {
         const wordsData = await fetchWords();
-        console.log('wordsData: ', wordsData);
+        console.log("wordsData: ", wordsData);
         setWords(wordsData);
       } catch (error) {
         console.log(error.message);
@@ -68,9 +68,7 @@ function TableTask({ searchValue, category }) {
     console.log("Click on Delete", { value });
   };
   const filteredData = useMemo(() => {
-
     return words.filter((item) => {
-
       const matchesSearch = item.Word.toLowerCase().includes(
         searchValue.toLowerCase()
       );
@@ -78,7 +76,6 @@ function TableTask({ searchValue, category }) {
       const matchesCategory = category ? item.Category === category : true;
 
       return matchesSearch && matchesCategory;
-      
     });
   }, [searchValue, category, words]);
 

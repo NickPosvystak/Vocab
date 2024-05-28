@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./RecommendPage.styled.scss";
-import { fetchWords } from "../../sevices/api";
+import { fetchWords } from "../../services/api";
 import WordsList from "../../components/WordsList/WordsList";
 import SelectInput from "../../components/Select/SelectInput";
 
@@ -23,9 +23,7 @@ const RecommendPage = () => {
       <div className="title-recom">
         <WordsList words={words} />
       </div>
-      <div>
-        {/* <SelectInput /> */}
-      </div>
+      <div>{/* <SelectInput /> */}</div>
     </section>
   );
 };
