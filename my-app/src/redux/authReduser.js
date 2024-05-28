@@ -8,7 +8,7 @@ export const registerThunk = createAsyncThunk(
     try {
       const authData = await requestRegister(formData);
 
-      console.log("authData: ========>", authData);
+      console.log("authData from  registerThunk: ========>", authData);
 
       return authData; // action payload
     } catch (error) {

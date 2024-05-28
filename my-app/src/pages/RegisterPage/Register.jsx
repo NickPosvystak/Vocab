@@ -3,15 +3,25 @@ import { useForm } from "react-hook-form";
 import "./Register.styled.scss";
 import Image from "../../assets/images/illustration.png";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { registerThunk } from "../../redux/authReduser";
 
 const Register = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const dispatch = useDispatch();
+
+  const onSubmit = (data) => {
+    dispatch(registerThunk(data))
+    reset();
+    console.log(data);
+  };
   console.log(errors);
+  
   return (
     <section className="container">
       <div className="box-image">
