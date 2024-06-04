@@ -6,30 +6,29 @@ import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
+import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 
 import "./SelectInput.styled.scss";
-// import DATA from "../../data";
 import TableTask from "../TableTask/TableTask";
-import { FormControlLabel, Radio } from "@mui/material";
 
 const SelectInput = () => {
   const [category, setCategory] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  // const [filteredWords, setFilteredWords] = useState(DATA);
+  const [verbType, setVerbType] = useState("");
 
-  const handleChange = (event) => {
-    const selectedCategory = event.target.value;
-    setCategory(selectedCategory);
-    // setCategory("");
-
-    // const newFilteredWords = selectedCategory
-    //   ? DATA.filter((word) => word.Category === selectedCategory)
-    //   : DATA;
-    // setFilteredWords(newFilteredWords);
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+    if (event.target.value !== "Verb") {
+      setVerbType("");
+    }
   };
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
+  };
+
+  const handleVerbTypeChange = (event) => {
+    setVerbType(event.target.value);
   };
 
   return (
@@ -48,7 +47,7 @@ const SelectInput = () => {
                   },
                   "&.Mui-focused fieldset": {
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-                    borderColor: "rgb(133, 170, 159)", // border color on focus
+                    borderColor: "rgb(133, 170, 159)",
                   },
                   "&.MuiInputBase fieldset": {
                     border: "none",
@@ -125,7 +124,7 @@ const SelectInput = () => {
                 id="demo-select-small"
                 value={category}
                 label="Category"
-                onChange={handleChange}
+                onChange={handleCategoryChange}
                 sx={{
                   borderRadius: "15px",
                 }}
@@ -133,11 +132,7 @@ const SelectInput = () => {
                 <MenuItem className="input-label" value="">
                   <em>All</em>
                 </MenuItem>
-                <MenuItem value="Verb">
-                  <FormControlLabel value="Verb"
-                    control={<Radio checked={selectedValue === 'Verb'}
-                onChange={handleRadioChange} value="Verb" name="radio-button-demo"}
-                </MenuItem>
+                <MenuItem value="Verb">Verb</MenuItem>
                 <MenuItem value="Participle">Participle</MenuItem>
                 <MenuItem value="Adjective">Adjective</MenuItem>
                 <MenuItem value="Pronoun">Pronoun</MenuItem>
@@ -151,13 +146,34 @@ const SelectInput = () => {
             </FormControl>
           </div>
         </label>
+
+        {category === "Verb" && (
+          <FormControl
+            component="fieldset"
+            sx={{
+              "& .MuiFormGroup-root": { display: "flex", flexDirection: "row" },
+            }}
+          >
+            <RadioGroup value={verbType} onChange={handleVerbTypeChange}>
+              <FormControlLabel
+                value="Regular"
+                control={<Radio />}
+                label="Regular"
+              />
+              <FormControlLabel
+                value="Irregular"
+                control={<Radio />}
+                label="Irregular"
+              />
+            </RadioGroup>
+          </FormControl>
+        )}
       </div>
       <div>
         <TableTask
           searchValue={searchValue}
           category={category}
-          // handleChange={handleChange}
-          // data={filteredWords}
+          verbType={verbType}
         />
       </div>
     </div>
