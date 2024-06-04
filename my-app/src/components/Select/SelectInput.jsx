@@ -10,6 +10,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./SelectInput.styled.scss";
 // import DATA from "../../data";
 import TableTask from "../TableTask/TableTask";
+import { FormControlLabel, Radio } from "@mui/material";
 
 const SelectInput = () => {
   const [category, setCategory] = useState("");
@@ -132,7 +133,11 @@ const SelectInput = () => {
                 <MenuItem className="input-label" value="">
                   <em>All</em>
                 </MenuItem>
-                <MenuItem value="Verb">Verb</MenuItem>
+                <MenuItem value="Verb">
+                  <FormControlLabel value="Verb"
+                    control={<Radio checked={selectedValue === 'Verb'}
+                onChange={handleRadioChange} value="Verb" name="radio-button-demo"}
+                </MenuItem>
                 <MenuItem value="Participle">Participle</MenuItem>
                 <MenuItem value="Adjective">Adjective</MenuItem>
                 <MenuItem value="Pronoun">Pronoun</MenuItem>
