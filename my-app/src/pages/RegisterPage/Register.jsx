@@ -4,7 +4,7 @@ import "./Register.styled.scss";
 import Image from "../../assets/images/illustration.png";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerThunk } from "../../redux/authReduser";
+import { registerThunk } from "../../redux/authReducer";
 
 const Register = () => {
   const {
@@ -18,7 +18,7 @@ const Register = () => {
   const onSubmit = (data) => {
     dispatch(registerThunk(data))
     reset();
-    console.log(data);
+    console.log("RegisterPage==DATA>", data);
   };
   console.log(errors);
   
