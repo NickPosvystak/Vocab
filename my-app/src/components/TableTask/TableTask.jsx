@@ -8,7 +8,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import DATA from "../../data";
+// import DATA from "../../data";
 import "./TableTask.styled.scss";
 import ButtonEdit from "../Edit/ButtonEdit";
 import { useState } from "react";
@@ -73,7 +73,7 @@ function TableTask({ searchValue, category }) {
         searchValue.toLowerCase()
       );
       
-      const matchesCategory = category ? item.Category === category : true;
+      const matchesCategory = category ? item.category === category : true;
       
       return matchesSearch && matchesCategory;
     });
