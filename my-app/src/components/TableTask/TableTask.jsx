@@ -69,42 +69,46 @@ function TableTask({ searchValue, category }) {
   };
   const filteredData = useMemo(() => {
     return words.filter((item) => {
-      const matchesSearch = item.Word.toLowerCase().includes(
+      const matchesSearch = item.word.toLowerCase().includes(
         searchValue.toLowerCase()
       );
-
+      
       const matchesCategory = category ? item.Category === category : true;
-
+      
       return matchesSearch && matchesCategory;
     });
   }, [searchValue, category, words]);
+  console.log('filteredData: ======>', filteredData);
 
   const columnHelper = createColumnHelper();
 
   const columns = React.useMemo(
     () => [
-      columnHelper.accessor("Word", {
+      columnHelper.accessor("word", {
         id: "Word",
         header: "Word",
         cell: (props) => <p>{props.getValue()}</p>,
       }),
-      columnHelper.accessor("Translation", {
+      columnHelper.accessor("translation", {
         id: "Translation",
         header: "Translation",
         cell: (props) => <p>{props.getValue()}</p>,
       }),
-      columnHelper.accessor("Category", {
+      columnHelper.accessor("category", {
         id: "Category",
+        header: "Category",
         cell: (props) => <p>{props.getValue()}</p>,
       }),
 
-      columnHelper.accessor("Progress", {
+      columnHelper.accessor("progress", {
         id: "Progress",
+        header: "Progress",
         cell: (props) => <p>{props.getValue()}</p>,
       }),
 
       columnHelper.accessor("Edit", {
         id: "Edit",
+        header: "Edit",
         cell: (props) => (
           <ButtonEdit
             onEdit={() => handleEdit(props)}
