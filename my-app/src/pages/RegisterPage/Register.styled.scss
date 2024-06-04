@@ -94,6 +94,7 @@ form {
 
 input[type="text"],
 input[type="password"] {
+  width: -webkit-fill-available;
   font-weight: 400;
   font-size: 16px;
   padding: 18px;

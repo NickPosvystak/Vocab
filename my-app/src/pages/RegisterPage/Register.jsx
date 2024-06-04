@@ -16,12 +16,12 @@ const Register = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(registerThunk(data))
+    dispatch(registerThunk(data));
     reset();
     console.log("RegisterPage==DATA>", data);
   };
-  console.log(errors);
-  
+  console.log("%cERRORS", "color: yellow", errors);
+
   return (
     <section className="container">
       <div className="box-image">
@@ -38,21 +38,35 @@ const Register = () => {
 
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="text"
-              placeholder="Name"
-              {...register("Name", { required: true })}
-            />
-            <input
-              type="text"
-              placeholder="Email"
-              {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              {...register("Password", { required: true })}
-            />
+            <label className="r-input">
+              <input
+                type="text"
+                placeholder="Name"
+                {...register("name", { required: true })}
+              />
+              {errors.name && <span>This field is required</span>}
+            </label>
+
+            <label>
+              <input
+                type="text"
+                placeholder="Email"
+                {...register("email", {
+                  required: true,
+                  pattern: /^\S+@\S+$/i,
+                })}
+              />
+              {errors.email && <span>This field is required</span>}
+            </label>
+
+            <label>
+              <input
+                type="password"
+                placeholder="Password"
+                {...register("password", { required: true })}
+              />
+              {errors.password && <span>This field is required</span>}
+            </label>
 
             <input type="submit" value="Register" />
             <NavLink to="/login" className="btn-login">
