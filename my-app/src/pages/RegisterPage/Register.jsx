@@ -4,7 +4,7 @@ import "./Register.styled.scss";
 import Image from "../../assets/images/illustration.png";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerThunk } from "../../redux/authReducer";
+import { allUsersThunk, registerThunk } from "../../redux/authReducer";
 
 const Register = () => {
   const {
@@ -17,11 +17,10 @@ const Register = () => {
 
   const onSubmit = (data) => {
     dispatch(registerThunk(data));
+    // dispatch(allUsersThunk(data));
     reset();
-    console.log("RegisterPage==DATA>", data);
+    console.log("%cRegisterPage==DATA", "color: #e1f7aa", data);
   };
-  console.log("%cERRORS", "color: yellow", errors);
-
   return (
     <section className="container">
       <div className="box-image">

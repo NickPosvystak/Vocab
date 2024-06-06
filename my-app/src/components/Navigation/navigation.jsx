@@ -4,8 +4,12 @@ import "./navigation.scss";
 import User from "../User/User";
 import Menu from "../Menu/Menu";
 import sprite from "../../assets/svg/symbol-defs.svg";
+import { useSelector } from "react-redux";
+import { selectAuthAuthenticated } from "../../redux/auth.selectors";
 
 const Navigation = () => {
+  const authenticated = useSelector(selectAuthAuthenticated);
+
   const [isSticky, setIsSticky] = useState(false);
 
   const [state, setState] = useState({
@@ -50,16 +54,28 @@ const Navigation = () => {
       </div>
 
       <div className="navigation-menu">
-        <NavLink to="/" className="nav-title">
-          Dictionary
-        </NavLink>
-
-        <NavLink to="/recommend" className="nav-title">
-          Recommend
-        </NavLink>
-        <NavLink to="/training" className="nav-title">
-          Training
-        </NavLink>
+        {authenticated ? (
+          <>
+            <NavLink to="/" className="nav-title">
+              Dictionary
+            </NavLink>
+            <NavLink to="/recommend" className="nav-title">
+              Recommend
+            </NavLink>
+            <NavLink to="/training" className="nav-title">
+              Training
+            </NavLink>
+          </>
+        ) : (
+          <>
+            <NavLink to="/login" className="nav-title">
+              Login
+            </NavLink>
+            <NavLink to="/register" className="nav-title">
+              Register
+            </NavLink>
+          </>
+        )}
       </div>
       <div className="bar-menu">
         <User />

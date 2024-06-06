@@ -3,15 +3,28 @@ import { useForm } from "react-hook-form";
 import "./Login.styled.scss";
 import Image from "../../assets/images/illustration.png";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginThunk } from "../../redux/authReducer";
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    dispatch(loginThunk(data));
+
+    reset();
+
+    console.log("LoginThunk ==>", data);
+  };
   console.log(errors);
+
   return (
     <section className="container">
       <div className="box-image">

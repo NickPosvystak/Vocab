@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const contactsInstance = axios.create({
-  baseURL: "https://65ccd3f8dd519126b83fa909.mockapi.io/",
+  baseURL: "https://65ccd3f8dd519126b83fa909.mockapi.io",
 });
 
 export const setToken = (token) => {
@@ -9,9 +9,32 @@ export const setToken = (token) => {
 };
 
 export const requestRegister = async (formData) => {
-  const { data } = await contactsInstance.post("user/signup", formData);
+
+  const { data } = await contactsInstance.post("contacts", formData);
+
   setToken(data.token);
+
+  console.log('setToken: ==>', setToken);
   
-  console.log('data from API contacts =>: ', data);
+  console.log("data from API requestRegister =>: ", data);
   return data;
 };
+
+export const requestLogin = async (formData) => {
+  const { data } = await contactsInstance.post("/login", formData);
+
+  setToken(data.token);
+
+  console.log("setToken: ==>", setToken);
+
+  console.log("data from API requestLogin =>: ", data);
+  return data;
+};
+
+
+export const getUsers = async (formData) => {
+  const { data } = await contactsInstance.get("/contacts", formData);
+  
+  console.log('data=>user: ----------', data);
+  return data;
+}
