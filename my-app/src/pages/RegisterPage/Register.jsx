@@ -20,7 +20,7 @@ const Register = () => {
     dispatch(registerThunk(data));
     // dispatch(allUsersThunk(data));
     reset();
-    console.log("%cRegisterPage==DATA", "color: #f81a1a", data);
+    console.log("%cRegisterPage==DATA", "color: #fbf702", data);
   };
   return (
     <section className="container">

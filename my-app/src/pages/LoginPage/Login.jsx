@@ -21,9 +21,8 @@ const Login = () => {
 
     reset();
 
-    console.log("LoginThunk ==>", data);
+    console.log("LoginPage ==>", data);
   };
-  console.log(errors);
 
   return (
     <section className="container">
@@ -43,13 +42,15 @@ const Login = () => {
             <input
               type="text"
               placeholder="Email"
-              {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
+            {errors.email && <span>This field is required</span>}
             <input
               type="password"
               placeholder="Password"
-              {...register("Password", { required: true })}
+              {...register("password", { required: true })}
             />
+            {errors.password && <span>This field is required</span>}
 
             <input type="submit" value="Login" />
             <NavLink to="/register" className="btn-register">

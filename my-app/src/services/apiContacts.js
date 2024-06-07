@@ -15,7 +15,6 @@ export const requestRegister = async (formData) => {
 
   setToken(data.token);
 
-  console.log("setToken: ==>", setToken);
 
   console.log("data from API requestRegister =>: ", data);
   return data;
@@ -28,7 +27,6 @@ export const requestLogin = async (formData) => {
 
   setToken(data.token);
 
-  console.log("setToken: ==>", setToken);
 
   console.log("data from API requestLogin =>: ", data);
   return data;
@@ -37,7 +35,7 @@ export const requestLogin = async (formData) => {
 // --------------Logout------------------------
 
 export const requestLogout = async () => {
-  const { data } = await contactsInstance.post("/users/login");
+  const { data } = await contactsInstance.post("/users/logout");
 
   console.log("data from API requestLogout =>: ", data);
   return data;

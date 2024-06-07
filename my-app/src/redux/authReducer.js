@@ -14,7 +14,7 @@ export const registerThunk = createAsyncThunk(
     try {
       const authData = await requestRegister(formData);
 
-      console.log("RegisterThunk:", authData);
+      console.log("registerThunk", authData);
 
       return authData; // action payload
     } catch (error) {
@@ -29,7 +29,7 @@ export const loginThunk = createAsyncThunk(
     try {
       const response = await requestLogin(formData);
 
-      console.log("  LoginThunk: ========>", response);
+      console.log("LoginThunk", response);
 
       return response; // action payload
     } catch (error) {
