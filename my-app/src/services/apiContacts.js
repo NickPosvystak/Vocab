@@ -10,7 +10,7 @@ export const setToken = (token) => {
 
 export const requestRegister = async (formData) => {
 
-  const { data } = await contactsInstance.post("contacts", formData);
+  const { data } = await contactsInstance.post("/users/register", formData);
 
   setToken(data.token);
 
