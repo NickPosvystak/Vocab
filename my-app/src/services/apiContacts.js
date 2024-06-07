@@ -37,7 +37,6 @@ export const requestLogin = async (formData) => {
 export const requestLogout = async () => {
   const { data } = await contactsInstance.post("/users/logout");
 
-  console.log("data from API requestLogout =>: ", data);
   return data;
 };
 // --------------Current------------------------
