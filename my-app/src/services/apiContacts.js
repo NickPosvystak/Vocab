@@ -1,27 +1,30 @@
 import axios from "axios";
 
 const contactsInstance = axios.create({
-  baseURL: "https://65ccd3f8dd519126b83fa909.mockapi.io",
+  baseURL: "https://connections-api.herokuapp.com/",
 });
 
 export const setToken = (token) => {
   contactsInstance.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
-export const requestRegister = async (formData) => {
+// --------------Register------------------------
 
-  const { data } = await contactsInstance.post("/users/register", formData);
+export const requestRegister = async (formData) => {
+  const { data } = await contactsInstance.post("/users/signup", formData);
 
   setToken(data.token);
 
-  console.log('setToken: ==>', setToken);
-  
+  console.log("setToken: ==>", setToken);
+
   console.log("data from API requestRegister =>: ", data);
   return data;
 };
 
+// --------------Login------------------------
+
 export const requestLogin = async (formData) => {
-  const { data } = await contactsInstance.post("/login", formData);
+  const { data } = await contactsInstance.post("/users/login", formData);
 
   setToken(data.token);
 
@@ -31,10 +34,26 @@ export const requestLogin = async (formData) => {
   return data;
 };
 
+// --------------Logout------------------------
+
+export const requestLogout = async () => {
+  const { data } = await contactsInstance.post("/users/login");
+
+  console.log("data from API requestLogout =>: ", data);
+  return data;
+};
+// --------------Current------------------------
+
+export const requestRefreshUser = async () => {
+  const { data } = await contactsInstance.get("/users/current");
+
+  console.log("data from API requestRefreshUser =>: ", data);
+  return data;
+};
 
 export const getUsers = async (formData) => {
   const { data } = await contactsInstance.get("/contacts", formData);
-  
-  console.log('data=>user: ----------', data);
+
+  console.log("data=>user: ----------", data);
   return data;
-}
+};

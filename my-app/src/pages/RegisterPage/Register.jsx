@@ -13,13 +13,14 @@ const Register = () => {
     reset,
     formState: { errors },
   } = useForm();
+
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     dispatch(registerThunk(data));
     // dispatch(allUsersThunk(data));
     reset();
-    console.log("%cRegisterPage==DATA", "color: #e1f7aa", data);
+    console.log("%cRegisterPage==DATA", "color: #f81a1a", data);
   };
   return (
     <section className="container">
