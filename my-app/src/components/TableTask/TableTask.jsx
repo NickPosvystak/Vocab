@@ -78,7 +78,7 @@ function TableTask({ searchValue, category }) {
       return matchesSearch && matchesCategory;
     });
   }, [searchValue, category, words]);
-  console.log("filteredData: ======>", filteredData);
+  // console.log("filteredData: ======>", filteredData);
 
   const columnHelper = createColumnHelper();
 
@@ -89,7 +89,6 @@ function TableTask({ searchValue, category }) {
         header: "Word",
         cell: (props) => {
           const value = props.getValue();
-          console.log("Rendering word cell with value:", value);
           return <p>{value}</p>;
         },
       }),
@@ -98,7 +97,6 @@ function TableTask({ searchValue, category }) {
         header: "Translation",
         cell: (props) => {
           const value = props.getValue();
-          console.log("Rendering translation cell with value:", value);
           return <p>{value}</p>;
         },
       }),
@@ -107,7 +105,6 @@ function TableTask({ searchValue, category }) {
         header: "Category",
         cell: (props) => {
           const value = props.getValue();
-          console.log("Rendering category cell with value:", value);
           return <p>{value}</p>;
         },
       }),
@@ -117,7 +114,6 @@ function TableTask({ searchValue, category }) {
         header: "Progress",
         cell: (props) => {
           const value = props.getValue();
-          console.log("Rendering progress cell with value:", value);
           return <p>{value}</p>;
         },
       }),

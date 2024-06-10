@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./RecommendPage.styled.scss";
 import { fetchWords } from "../../services/api";
 import WordsList from "../../components/WordsList/WordsList";
-import SelectInput from "../../components/Select/SelectInput";
 
 const RecommendPage = () => {
   const [words, setWords] = useState(null);
@@ -11,7 +10,9 @@ const RecommendPage = () => {
     const fetchAllWords = async () => {
       try {
         const wordsData = await fetchWords();
+        console.log('wordsData: ', wordsData);
         setWords(wordsData);
+        
       } catch (error) {
         console.log("error");
       }
@@ -23,7 +24,6 @@ const RecommendPage = () => {
       <div className="title-recom">
         <WordsList words={words} />
       </div>
-      <div>{/* <SelectInput /> */}</div>
     </section>
   );
 };

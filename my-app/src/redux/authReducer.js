@@ -50,6 +50,7 @@ export const refreshThunk = createAsyncThunk(
 
     try {
       setToken(token);
+      console.log('setToken in REFRESH: ', setToken);
 
       const authData = await requestRefreshUser();
 

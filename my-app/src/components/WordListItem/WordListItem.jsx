@@ -10,16 +10,13 @@ const WordListItem = ({
   word,
 }) => {
   return (
-    <li>
-      <span>ID:{id}</span>
-      <span>key:{id}</span>
-      <span>word:{word}</span>
-      <span>translation:{translation}</span>
-      <span>description:{description}</span>
-      <span>exampleSentence:{exampleSentence}</span>
-      <span>progress:{progress}</span>
-      <span>edit:{edit}</span>
-    </li>
+    <tr>
+      <td>{id}</td>
+      <td>{word}</td>
+      <td>{translation}</td>
+      {/* <td>{description}</td> */}
+      <td>{exampleSentence}</td>
+        </tr>
   );
 };
 export default WordListItem;
