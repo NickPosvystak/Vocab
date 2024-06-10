@@ -69,9 +69,9 @@ function TableTask({ searchValue, category }) {
   };
   const filteredData = useMemo(() => {
     return words.filter((item) => {
-      const matchesSearch = (item.word || "")
+      const matchesSearch = (item.word || "") //Check
         .toLowerCase()
-        .includes((searchValue || "").toLowerCase());
+        .includes((searchValue || "").toLowerCase()); //Check
 
       const matchesCategory = category ? item.category === category : true;
 
