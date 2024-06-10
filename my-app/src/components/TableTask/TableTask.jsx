@@ -69,16 +69,16 @@ function TableTask({ searchValue, category }) {
   };
   const filteredData = useMemo(() => {
     return words.filter((item) => {
-      const matchesSearch = item.word.toLowerCase().includes(
-        searchValue.toLowerCase()
-      );
-      
+      const matchesSearch = (item.word || "")
+        .toLowerCase()
+        .includes((searchValue || "").toLowerCase());
+
       const matchesCategory = category ? item.category === category : true;
-      
+
       return matchesSearch && matchesCategory;
     });
   }, [searchValue, category, words]);
-  console.log('filteredData: ======>', filteredData);
+  console.log("filteredData: ======>", filteredData);
 
   const columnHelper = createColumnHelper();
 
