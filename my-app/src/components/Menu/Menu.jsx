@@ -6,8 +6,19 @@ import { NavLink } from "react-router-dom";
 import "./Menu.styled.scss";
 import User from "../User/User";
 import sprite from "../../assets/svg/symbol-defs.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthAuthenticated } from "../../redux/auth.selectors";
+import Logout from "../Logout/Logout";
+import { logOutThunk } from "../../redux/authReducer";
 
 export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
+  const authenticated = useSelector(selectAuthAuthenticated);
+
+   const dispatch = useDispatch();
+   const handleLogout = () => {
+     dispatch(logOutThunk());
+   };
+
   const list = (anchor) => (
     <Box
       className="menu-container"
@@ -24,21 +35,34 @@ export default function AnchorTemporaryDrawer({ state, toggleDrawer }) {
       </div>
 
       <div className="nav-menu">
-        <NavLink to="/" className="nav-title">
-          Dictionary
-        </NavLink>
-        <NavLink to="/register" className="nav-title">
-          Register
-        </NavLink>
-        <NavLink to="/recommend" className="nav-title">
-          Recommend
-        </NavLink>
-        <NavLink to="/training" className="nav-title">
-          Training
-        </NavLink>
-        <NavLink to="/login" className="nav-title">
-          Login
-        </NavLink>
+        {authenticated ? (
+          <>
+            <NavLink to="/" className="nav-title">
+              Dictionary
+            </NavLink>
+            <NavLink to="/recommend" className="nav-title">
+              Recommend
+            </NavLink>
+            <NavLink to="/training" className="nav-title">
+              Training
+            </NavLink>
+            <button onClick={handleLogout} className="btn-logout-menu">
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <NavLink to="/" className="nav-title">
+              Dictionary
+            </NavLink>
+            <NavLink to="/register" className="nav-title">
+              Register
+            </NavLink>
+            <NavLink to="/login" className="nav-title">
+              Login
+            </NavLink>
+          </>
+        )}
       </div>
       {/* <div className="image-box">
         <img

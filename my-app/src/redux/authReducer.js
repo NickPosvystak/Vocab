@@ -57,7 +57,7 @@ export const refreshThunk = createAsyncThunk(
 
       return authData; // action payload
     } catch (error) {
-      return ThunkAPI.rejectWithValue(error.message);
+      return ThunkAPI.rejectWithValue('Please Login');
     }
   },
   {

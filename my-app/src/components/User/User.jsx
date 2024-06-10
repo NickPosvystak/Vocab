@@ -1,21 +1,23 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../../redux/auth.selectors";
+import { useSelector } from "react-redux";
+import {
+  selectAuthAuthenticated,
+  selectUser,
+} from "../../redux/auth.selectors";
 import "./User.scss";
-import { logOutThunk } from "../../redux/authReducer";
 
 const User = () => {
-  const dispatch = useDispatch();
-  const handleLogout = () => {
-    dispatch(logOutThunk());
-  };
+  const authenticated = useSelector(selectAuthAuthenticated);
+
   const userName = useSelector(selectUser);
   return (
     <div className="user-item">
-      <p className="title">{userName}</p>
-      <button className="name-img">N</button>
-      <button onClick={handleLogout} className="btn-logout">
-        Logout
-      </button>
+      {authenticated ? (
+        <>
+          <p className="title">{userName}</p>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

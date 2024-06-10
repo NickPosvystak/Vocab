@@ -34,7 +34,7 @@ function TableTask({ searchValue, category }) {
   }, []);
 
   const handleEdit = (props) => {
-    const wordValue = props.row.original.Word;
+    const wordValue = props.row.original.word;
     setSelectedValue(wordValue);
     Confirm.show(
       "Confirm",
@@ -87,32 +87,48 @@ function TableTask({ searchValue, category }) {
       columnHelper.accessor("word", {
         id: "Word",
         header: "Word",
-        cell: (props) => <p>{props.getValue()}</p>,
+        cell: (props) => {
+          const value = props.getValue();
+          console.log("Rendering word cell with value:", value);
+          return <p>{value}</p>;
+        },
       }),
       columnHelper.accessor("translation", {
         id: "Translation",
         header: "Translation",
-        cell: (props) => <p>{props.getValue()}</p>,
+        cell: (props) => {
+          const value = props.getValue();
+          console.log("Rendering translation cell with value:", value);
+          return <p>{value}</p>;
+        },
       }),
       columnHelper.accessor("category", {
         id: "Category",
         header: "Category",
-        cell: (props) => <p>{props.getValue()}</p>,
+        cell: (props) => {
+          const value = props.getValue();
+          console.log("Rendering category cell with value:", value);
+          return <p>{value}</p>;
+        },
       }),
 
       columnHelper.accessor("progress", {
         id: "Progress",
         header: "Progress",
-        cell: (props) => <p>{props.getValue()}</p>,
+        cell: (props) => {
+          const value = props.getValue();
+          console.log("Rendering progress cell with value:", value);
+          return <p>{value}</p>;
+        },
       }),
 
-      columnHelper.accessor("Edit", {
+      columnHelper.accessor("edit", {
         id: "Edit",
         header: "Edit",
         cell: (props) => (
           <ButtonEdit
             onEdit={() => handleEdit(props)}
-            onDelete={() => handleDelete(props.row.original.Word)}
+            onDelete={() => handleDelete(props.row.original.word)}
           />
         ),
       }),

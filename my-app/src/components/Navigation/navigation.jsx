@@ -6,6 +6,7 @@ import Menu from "../Menu/Menu";
 import sprite from "../../assets/svg/symbol-defs.svg";
 import { useSelector } from "react-redux";
 import { selectAuthAuthenticated } from "../../redux/auth.selectors";
+import Logout from "../Logout/Logout";
 
 const Navigation = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
@@ -54,11 +55,11 @@ const Navigation = () => {
       </div>
 
       <div className="navigation-menu">
+        <NavLink to="/" className="nav-title">
+          Dictionary
+        </NavLink>
         {authenticated ? (
           <>
-            <NavLink to="/" className="nav-title">
-              Dictionary
-            </NavLink>
             <NavLink to="/recommend" className="nav-title">
               Recommend
             </NavLink>
@@ -79,6 +80,7 @@ const Navigation = () => {
       </div>
       <div className="bar-menu">
         <User />
+       {authenticated && <Logout />}
         <Menu state={state} toggleDrawer={toggleDrawer} />
       </div>
     </header>

@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/Navigation/navigation";
 import { RotatingLines } from "react-loader-spinner";
+import RestrictedRoute from "./components/Restricted/RestrictedRoute";
 // import CircularProgress from "@mui/material/CircularProgress";
 
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -10,6 +11,37 @@ const RegisterPage = lazy(() => import("./pages/RegisterPage/Register"));
 const LoginPage = lazy(() => import("./pages/LoginPage/Login"));
 const RecommendPage = lazy(() => import("./pages/RecommendPage/Recommend"));
 const TrainingPage = lazy(() => import("./pages/TrainingPage/Training"));
+
+const appRoutes = [
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/recommend",
+    element: <RecommendPage />,
+  },
+  {
+    path: "/training",
+    element: <TrainingPage />,
+  },
+  {
+    path: "/register",
+    element: (
+      <RestrictedRoute>
+        <RegisterPage />
+      </RestrictedRoute>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <RestrictedRoute>
+        <LoginPage />
+      </RestrictedRoute>
+    ),
+  },
+];
 
 function App() {
   return (
@@ -34,11 +66,9 @@ function App() {
         }
       >
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/recommend" element={<RecommendPage />} />
-          <Route path="/training" element={<TrainingPage />} />
+          {appRoutes.map(({ path, element }) => (
+            <Route key={path} path={path} element={element} />
+          ))}
         </Routes>
       </Suspense>
     </div>
