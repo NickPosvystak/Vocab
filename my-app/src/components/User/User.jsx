@@ -11,7 +11,7 @@ const User = () => {
   const userName = useSelector(selectUser);
   return (
     <div className="user-item">
-      <p className="title">Hello, {userName}</p>
+      <p className="title">{userName}</p>
       <button className="name-img">N</button>
       <button onClick={handleLogout} className="btn-logout">
         Logout

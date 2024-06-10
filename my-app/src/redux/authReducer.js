@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
   getUsers,
   requestLogin,
@@ -116,75 +116,65 @@ const authSlice = createSlice({
   initialState: INITIAL_STATE,
   extraReducers: (builder) =>
     builder
+
       //REGISTER USER------------------------------
-      .addCase(registerThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
+
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-      .addCase(registerThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+
       // LOGIN-------------------------------------
-      .addCase(loginThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
+
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-      .addCase(loginThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+
       //REFRESH---------------------------------------
-      .addCase(refreshThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
+
       .addCase(refreshThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.authenticated = true;
         state.user = action.payload;
       })
-      .addCase(refreshThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
+
       //LOGOUT--------------------------------------
-      .addCase(logOutThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
+
       .addCase(logOutThunk.fulfilled, () => {
         return INITIAL_STATE;
       })
-      .addCase(logOutThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      })
-      // ALL
-      .addCase(allUsersThunk.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(allUsersThunk.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.user = action.payload.user;
-      })
-      .addCase(allUsersThunk.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      }),
+
+      // PENDING & REJECT
+
+      .addMatcher(
+        isAnyOf(
+          registerThunk.pending,
+          loginThunk.pending,
+          refreshThunk.pending,
+          logOutThunk.pending
+        ),
+        (state) => {
+          state.isLoading = true;
+          state.error = null;
+        }
+      )
+      .addMatcher(
+        isAnyOf(
+          registerThunk.rejected,
+          loginThunk.rejected,
+          refreshThunk.rejected,
+          logOutThunk.rejected
+        ),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        }
+      ),
 });
 
 export const authReducer = authSlice.reducer;
