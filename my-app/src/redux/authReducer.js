@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   getUsers,
   requestLogin,
+  requestLogout,
   requestRefreshUser,
   requestRegister,
   setToken,
@@ -70,6 +71,19 @@ export const refreshThunk = createAsyncThunk(
   }
 );
 
+export const logOutThunk = createAsyncThunk(
+  "auth/logout",
+  async (_, ThunkAPI) => {
+    try {
+      await requestLogout();
+
+      return;
+    } catch (error) {
+      return ThunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 export const allUsersThunk = createAsyncThunk(
   "users",
 
@@ -102,7 +116,7 @@ const authSlice = createSlice({
   initialState: INITIAL_STATE,
   extraReducers: (builder) =>
     builder
-      //REGISTER USER
+      //REGISTER USER------------------------------
       .addCase(registerThunk.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -117,7 +131,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      // LOGIN
+      // LOGIN-------------------------------------
       .addCase(loginThunk.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -132,6 +146,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
+      //REFRESH---------------------------------------
       .addCase(refreshThunk.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -142,6 +157,18 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(refreshThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      //LOGOUT--------------------------------------
+      .addCase(logOutThunk.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(logOutThunk.fulfilled, () => {
+        return INITIAL_STATE;
+      })
+      .addCase(logOutThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
