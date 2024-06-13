@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -8,78 +8,10 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-// import DATA from "../../data";
 import "./TableTask.styled.scss";
 import ButtonEdit from "../Edit/ButtonEdit";
-import { useState } from "react";
-import { Confirm } from "notiflix/build/notiflix-confirm-aio";
-import { Report } from "notiflix/build/notiflix-report-aio";
-import { fetchWords } from "../../services/api";
 
-function TableTask({ searchValue, category }) {
-  const [selectedValue, setSelectedValue] = useState(null);
-  const [words, setWords] = useState([]);
-
-  useEffect(() => {
-    const fetchAllWords = async () => {
-      try {
-        const wordsData = await fetchWords();
-        console.log("wordsData: ", wordsData);
-        setWords(wordsData);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchAllWords();
-  }, []);
-
-  const handleEdit = (props) => {
-    const wordValue = props.row.original.word;
-    setSelectedValue(wordValue);
-    Confirm.show(
-      "Confirm",
-      "Do you want to edit?",
-      "Yes",
-      "No",
-      () => {
-        Report.warning("Wait for update", "Come back soon", "Okay");
-      },
-      () => {
-        Report.info("Wait for update", "Come back soon", "Okay");
-      },
-      {}
-    );
-    console.log("Click on edit", { wordValue });
-  };
-  const handleDelete = (value) => {
-    Confirm.show(
-      "Confirm",
-      "Do you want to edit?",
-      "Yes",
-      "No",
-      () => {
-        Report.warning("Wait for update", "Come back soon", "Okay");
-      },
-      () => {
-        Report.info("Wait for update", "Come back soon", "Okay");
-      },
-      {}
-    );
-    console.log("Click on Delete", { value });
-  };
-  const filteredData = useMemo(() => {
-    return words.filter((item) => {
-      const matchesSearch = (item.word || "") //Check
-        .toLowerCase()
-        .includes((searchValue || "").toLowerCase()); //Check
-
-      const matchesCategory = category ? item.category === category : true;
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchValue, category, words]);
-  // console.log("filteredData: ======>", filteredData);
-
+function TableTask({ data, handleEdit, handleDelete }) {
   const columnHelper = createColumnHelper();
 
   const columns = React.useMemo(
@@ -133,7 +65,7 @@ function TableTask({ searchValue, category }) {
   );
 
   const table = useReactTable({
-    data: filteredData,
+    data,
     columns,
     // filterFns: {},
     // state: {
