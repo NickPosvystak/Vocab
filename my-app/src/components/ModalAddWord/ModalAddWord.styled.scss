@@ -1,0 +1,17 @@
+.btn-add-word {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* Example background color */
+  color: rgb(5, 5, 5);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-word {
+  margin-left: 8px;
+  stroke: var(--primaryColor);
+}

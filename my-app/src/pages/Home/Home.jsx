@@ -9,6 +9,8 @@ import { fetchMyWords } from "../../services/api";
 import { Confirm, Report } from "notiflix";
 import { useMemo } from "react";
 import TableTask from "../../components/TableTask/TableTask";
+import ModalAddWord from "../../components/ModalAddWord/ModalAddWord";
+
 
 const Home = ({ searchValue, category, verbType }) => {
   const [selectedValue, setSelectedValue] = useState(null);
@@ -76,20 +78,20 @@ const Home = ({ searchValue, category, verbType }) => {
 
   return (
     <section className="home-container">
-      <>
+      <div className="nav-header-home">
         <SelectInput />
-        <TableTask
-          data={filteredData}
-          handleEdit={handleEdit}
-          handleDelete={handleDelete}
-          searchValue={searchValue}
-          category={category}
-          verbType={verbType}
-        />
-      </>
-      <>
-        <Footer />
-      </>
+        <ModalAddWord />
+      </div>
+      <TableTask
+        data={filteredData}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+        searchValue={searchValue}
+        category={category}
+        verbType={verbType}
+      />
+
+      <Footer />
     </section>
   );
 };

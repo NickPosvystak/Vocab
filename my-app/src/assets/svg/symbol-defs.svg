@@ -29,5 +29,9 @@
 <symbol id="icon-edit" viewBox="0 0 32 32">
 <path stroke-linejoin="round" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.88" d="M22.656 4c1.472-1.488 3.856-1.488 5.344 0 1.472 1.472 1.472 3.856 0 5.328l-17.616 17.6c-0.4 0.4-0.592 0.592-0.816 0.736-0.192 0.144-0.416 0.24-0.64 0.32-0.256 0.080-0.544 0.112-1.088 0.176l-4.512 0.496 0.496-4.512c0.064-0.544 0.096-0.832 0.176-1.088 0.080-0.224 0.176-0.448 0.32-0.64 0.144-0.224 0.336-0.416 0.736-0.816l17.6-17.6z"></path>
 </symbol>
+<symbol id="icon-plus" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M16 6.656v18.672"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.4" d="M6.656 16h18.672"></path>
+</symbol>
 </defs>
 </svg>
