@@ -61,7 +61,7 @@ function TableTask({ data, handleEdit, handleDelete }) {
         ),
       }),
     ],
-    [columnHelper]
+    [columnHelper, handleEdit, handleDelete]
   );
 
   const table = useReactTable({
