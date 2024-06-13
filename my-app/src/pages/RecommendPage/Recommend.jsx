@@ -68,6 +68,7 @@ const RecommendPage = ({ searchValue, category, verbType }) => {
       return matchesSearch && matchesCategory;
     });
   }, [searchValue, category, words]);
+
   return (
     <section className="r-section">
       <SelectInput />
