@@ -1,0 +1,45 @@
+/**
+|============================
+| Logo REACT Development
+|============================
+*/
+.logo-box {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  // margin-top: auto;
+  background-color: var(--primaryColor);
+}
+
+.App-logo-spin{
+  animation: App-logo-spin infinite 2s linear;
+  width: 100px;
+  height: 100px;
+}
+.App-logo-spin-1{
+  animation: App-logo-spin-1 infinite 2s linear;
+  width: 100px;
+  height: 100px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes App-logo-spin-1 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.logo-title.example{
+  color: #FFF;
+  padding: 20px;
+}

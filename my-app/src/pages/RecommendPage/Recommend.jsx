@@ -1,29 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./RecommendPage.styled.scss";
-import { fetchWords } from "../../services/api";
-import WordsList from "../../components/WordsList/WordsList";
+import SelectInput from "../../components/Select/SelectInput";
+import Footer from "../../components/Footer/Footer";
 
 const RecommendPage = () => {
-  const [words, setWords] = useState(null);
-
-  useEffect(() => {
-    const fetchAllWords = async () => {
-      try {
-        const wordsData = await fetchWords();
-        console.log('wordsData: ', wordsData);
-        setWords(wordsData);
-        
-      } catch (error) {
-        console.log("error");
-      }
-    };
-    fetchAllWords();
-  }, []);
   return (
     <section className="r-section">
-      <div className="title-recom">
-        <WordsList words={words} />
-      </div>
+      <SelectInput />
+      <Footer />
     </section>
   );
 };
