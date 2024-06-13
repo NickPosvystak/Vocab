@@ -1,23 +1,18 @@
-.home-container{
-   display: flex;
+.home-container {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh; 
+  height: 100vh;
 
-.nav-header-home{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .nav-header-home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  @media only screen and (min-width: 1440px) {
+  }
 }
-
-
-}
-
-
-
-
-
 
 /**
 |============================
@@ -33,12 +28,12 @@
   background-color: var(--primaryColor);
 }
 
-.App-logo-spin{
+.App-logo-spin {
   animation: App-logo-spin infinite 2s linear;
   width: 100px;
   height: 100px;
 }
-.App-logo-spin-1{
+.App-logo-spin-1 {
   animation: App-logo-spin-1 infinite 2s linear;
   width: 100px;
   height: 100px;
@@ -60,7 +55,7 @@
     transform: rotate(0deg);
   }
 }
-.logo-title.example{
-  color: #FFF;
+.logo-title.example {
+  color: #fff;
   padding: 20px;
 }
