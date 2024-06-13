@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOutThunk } from "../../redux/authReducer";
 
@@ -7,10 +8,11 @@ import { selectAuthAuthenticated } from "../../redux/auth.selectors";
 
 const Logout = () => {
   const authenticated = useSelector(selectAuthAuthenticated);
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const handleLogout = () => {
-    dispatch(logOutThunk());
+    dispatch(logOutThunk()).then(navigate("/"));
   };
   return (
     <>
