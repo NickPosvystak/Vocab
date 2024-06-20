@@ -1,9 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import "./ModalAddWord.styled.scss";
+import "./ModalAddWord.styled.scss"
 import sprite from "../../assets/svg/symbol-defs.svg";
 
 const style = {
@@ -26,7 +26,7 @@ export default function ModalAddWord() {
   return (
     <div>
       <button onClick={handleOpenAddWord} className="btn-add-word">
-        Add word{" "}
+        Add word
         <svg className="add-word" width="20" height="20">
           <use href={sprite + "#icon-plus"}></use>
         </svg>

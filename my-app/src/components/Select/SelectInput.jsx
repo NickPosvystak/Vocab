@@ -9,7 +9,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
 
 import "./SelectInput.styled.scss";
-import TableTask from "../TableTask/TableTask";
 
 const SelectInput = () => {
   const [category, setCategory] = useState("");
