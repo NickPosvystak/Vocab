@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import "./ModalAddWord.styled.scss"
+import "./ModalAddWord.styled.scss";
 import sprite from "../../assets/svg/symbol-defs.svg";
 
 const style = {
@@ -38,11 +38,39 @@ export default function ModalAddWord() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <Typography>
+
+
+          <h3>Add word</h3>
+          <p>
+            Adding a new word to the dictionary is an important step in
+            enriching the language base and expanding the vocabulary.
+          </p>
+          <div>
+            <label htmlFor="">
+              <input type="value" />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="" className="text" placeholder="">
+              <input
+                type="text"
+                name="ukarainian"
+                id=""
+                placeholder="Word on ukrainian"
+              />
+            </label>
+            <label htmlFor="" className="text" placeholder="Word on english">
+              <input
+                type="text"
+                name="english"
+                id=""
+                placeholder="Word on english"
+              />
+            </label>
+            </div>
+            <button type="button">Add</button>
+            <button type="button">Cancel</button>
           </Typography>
         </Box>
       </Modal>
