@@ -2,8 +2,22 @@ import React from "react";
 import "./Training.styled.scss";
 import report from "../../assets/images/report.png";
 import { Report } from "notiflix/build/notiflix-report-aio";
+// import { useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";
+// import ModalAddWord from "../../components/ModalAddWord/ModalAddWord";
 
 const Training = () => {
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+
+
+  // const handleAddWord = () => {
+    
+  //   navigate("/dictionary");
+  //   dispatch(ModalAddWord())
+  // }
+
+
   const handleChange = () => {
   Report.success('Clicked on Add word', 'Function comes soon', 'Okay')
   };
